@@ -1,16 +1,17 @@
 import UIKit
 
-class GameViewController: UIViewController {
+final class GameViewController: UIViewController {
   //Переменная для сохранения того, что напишет пользователь
   var word: String = ""
   //Создание лэйбла
-  var label = UILabel()
+  private let label = UILabel()
   //Создание кнопки
-  var startButton = UIButton()
+  private let startButton = UIButton()
   
   override func viewDidLoad() {
+    super.viewDidLoad()
     //Настройка лэйбла
-    label = UILabel(frame: CGRect(x: 120, y: 300, width: 200, height: 50))
+    label.frame = CGRect(x: 120, y: 300, width: 200, height: 50)
     label.textAlignment = .center
     label.text = ""
     label.layer.cornerRadius = 15
@@ -19,8 +20,7 @@ class GameViewController: UIViewController {
     label.isHidden = true
     view.addSubview(label)
     //Настройка кнопки
-    super.viewDidLoad()
-    startButton = UIButton(frame: CGRect(x: 120, y: 400, width: 200, height: 50))
+    startButton.frame = CGRect(x: 120, y: 400, width: 200, height: 50)
     startButton.setTitle("Старт", for: .normal)
     startButton.backgroundColor = .systemOrange
     startButton.layer.cornerRadius = 10
@@ -33,7 +33,9 @@ class GameViewController: UIViewController {
   @objc func enterWord(sender: UIButton!) {
     let alertController = UIAlertController(title: "Введите слово", message: "", preferredStyle: .alert)
     let action = UIAlertAction(title: "OK", style: .default) { (action) in
-      self.word = (alertController.textFields?.first?.text)!
+      if let txt = alertController.textFields?.first?.text {
+      self.word = txt
+      }
       let gameResponse = GameResponse(word: self.word)
       self.label.text = gameResponse.wordReturn()
       self.label.isHidden = false
@@ -47,7 +49,7 @@ class GameViewController: UIViewController {
     for textField in alertController.textFields! {
       let container = textField.superview
       let effectView = container?.superview?.subviews[0]
-      if (effectView != nil) {
+      if effectView != nil {
         container?.backgroundColor = UIColor.clear
         effectView?.removeFromSuperview()
       }
