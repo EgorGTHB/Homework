@@ -1,8 +1,8 @@
 import UIKit
 
 final class BirthdayCardViewController: UIViewController {
+  // MARK: - Private Properties
   private let navigationItemLabel = UILabel()
-  private let icon = UIImage(named: "Iconnn")
   private let iconCardImageView = UIImageView()
   private let nameLabel = UILabel()
   private let nameTextField = UITextField()
@@ -12,7 +12,6 @@ final class BirthdayCardViewController: UIViewController {
   private let ageTextField = UITextField()
   private let sexLabel = UILabel()
   private let sexTextField = UITextField()
-  private let sexArray = ["Парень", "Девушка"]
   private let instagramLabel = UILabel()
   private let instagramTextField = UITextField()
   private let datePicker = UIDatePicker()
@@ -20,51 +19,16 @@ final class BirthdayCardViewController: UIViewController {
   private let sexPicker = UIPickerView()
   private let changePhotoButton = UIButton(type: .system)
   
+  private let icon = UIImage(named: "Iconnn")
+  private let sexArray = ["Парень", "Девушка"]
+  
+  // MARK: - UIViewController()
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-    hideKeyboardWhenTappedAround()
   }
   
-  private func setupView() {
-    addSubviews()
-    addTarget()
-    setupSelfView()
-    setupNavigationController()
-    setupIconCardImageView()
-    setupChangePhotoButton()
-    setupNameLabel()
-    setupNameTextField()
-    setupDateLabel()
-    setupDateTextFieldWithItsToolbarAndDatePicker()
-    setupAgeLabel()
-    setupAgeTextFieldWithItsToolbarAndDatePicker()
-    setupSexLabel()
-    setupSexTextFieldWithItsToolbarAndDatePicker()
-    setupInstagramLabel()
-    setupInstagramTextField()
-  }
-  
-  private func addSubviews() {
-    view.addSubview(iconCardImageView)
-    view.addSubview(changePhotoButton)
-    view.addSubview(nameLabel)
-    view.addSubview(nameTextField)
-    view.addSubview(dateLabel)
-    view.addSubview(dateTextField)
-    view.addSubview(ageLabel)
-    view.addSubview(ageTextField)
-    view.addSubview(sexLabel)
-    view.addSubview(sexTextField)
-    view.addSubview(instagramLabel)
-    view.addSubview(instagramTextField)
-  }
-  
-  private func addTarget() {
-    changePhotoButton.addTarget(self, action: #selector(changePhotoAction), for: .touchUpInside)
-    datePicker.addTarget(self, action: #selector(datePickerChange(parameDatePicker:)), for: .valueChanged)
-  }
-  
+  // MARK: - Visual Components
   private func setupSelfView() {
     view.backgroundColor = .white
   }
@@ -99,7 +63,7 @@ final class BirthdayCardViewController: UIViewController {
   
   private func setupNameTextField() {
     nameTextField.frame = CGRect(x: 25, y: 320, width: 300, height: 30)
-    nameTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+    nameTextField.contentVerticalAlignment = .center
     nameTextField.textAlignment = .left
     nameTextField.placeholder = "Введите имя"
     nameTextField.layer.addSublayer(bottomLine(textFiled: nameTextField))
@@ -116,23 +80,23 @@ final class BirthdayCardViewController: UIViewController {
   }
   
   private func setupDateTextFieldWithItsToolbarAndDatePicker() {
-    dateTextField.frame = CGRect(x: 25, y: 390, width: 300, height: 30)
-    dateTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-    dateTextField.textAlignment = .left
-    dateTextField.placeholder = "Выберите дату"
-    dateTextField.layer.addSublayer(bottomLine(textFiled: dateTextField))
-    dateTextField.inputView = datePicker
     let toolbardateTextField = UIToolbar()
     toolbardateTextField.sizeToFit()
     let flexSpaceDate = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     let doneButtonDate = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector (doneActionDate))
     toolbardateTextField.setItems([flexSpaceDate, doneButtonDate], animated: true)
-    dateTextField.inputAccessoryView = toolbardateTextField
-    dateTextField.textColor = .black
     let currentDate = Date()
     var oneYearTime = TimeInterval()
     oneYearTime = 360 * 24 * 60 * 60
     let oneYearFrom = currentDate.addingTimeInterval(oneYearTime)
+    dateTextField.frame = CGRect(x: 25, y: 390, width: 300, height: 30)
+    dateTextField.contentVerticalAlignment = .center
+    dateTextField.textAlignment = .left
+    dateTextField.placeholder = "Выберите дату"
+    dateTextField.layer.addSublayer(bottomLine(textFiled: dateTextField))
+    dateTextField.inputView = datePicker
+    dateTextField.inputAccessoryView = toolbardateTextField
+    dateTextField.textColor = .black
     datePicker.preferredDatePickerStyle = .wheels
     datePicker.datePickerMode = .date
     datePicker.minimumDate = currentDate
@@ -148,16 +112,16 @@ final class BirthdayCardViewController: UIViewController {
   }
   
   private func setupAgeTextFieldWithItsToolbarAndDatePicker() {
-    ageTextField.frame = CGRect(x: 25, y: 460, width: 300, height: 30)
-    ageTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-    ageTextField.textAlignment = .left
-    ageTextField.placeholder = "Выберите возраст"
-    ageTextField.inputView = agePicker
     let toolAgeTextField = UIToolbar()
     toolAgeTextField.sizeToFit()
     let flexSpaceAge = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     let doneButtonAge = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector (endEditing))
     toolAgeTextField.setItems ([flexSpaceAge,doneButtonAge], animated: true)
+    ageTextField.frame = CGRect(x: 25, y: 460, width: 300, height: 30)
+    ageTextField.contentVerticalAlignment = .center
+    ageTextField.textAlignment = .left
+    ageTextField.placeholder = "Выберите возраст"
+    ageTextField.inputView = agePicker
     ageTextField.inputAccessoryView = toolAgeTextField
     ageTextField.layer.addSublayer(bottomLine(textFiled: ageTextField))
     ageTextField.textColor = .black
@@ -174,16 +138,16 @@ final class BirthdayCardViewController: UIViewController {
   }
   
   private func setupSexTextFieldWithItsToolbarAndDatePicker() {
-    sexTextField.frame = CGRect(x: 25, y: 530, width: 300, height: 30)
-    sexTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-    sexTextField.textAlignment = .left
-    sexTextField.placeholder = "Выберите пол"
-    sexTextField.inputView = sexPicker
     let toolSexTextField = UIToolbar()
     toolSexTextField.sizeToFit()
     let flexSpaceSex = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
     let doneButtonSex = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector (endEditing))
     toolSexTextField.setItems([flexSpaceSex,doneButtonSex], animated: true)
+    sexTextField.frame = CGRect(x: 25, y: 530, width: 300, height: 30)
+    sexTextField.contentVerticalAlignment = .center
+    sexTextField.textAlignment = .left
+    sexTextField.placeholder = "Выберите пол"
+    sexTextField.inputView = sexPicker
     sexTextField.inputAccessoryView = toolSexTextField
     sexTextField.layer.addSublayer(bottomLine(textFiled: sexTextField))
     sexTextField.inputView = sexPicker
@@ -203,11 +167,52 @@ final class BirthdayCardViewController: UIViewController {
   private func setupInstagramTextField() {
     instagramTextField.frame = CGRect(x: 25, y: 600, width: 300, height: 30)
     instagramTextField.delegate = self
-    instagramTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+    instagramTextField.contentVerticalAlignment = .center
     instagramTextField.textAlignment = .left
     instagramTextField.placeholder = "Добавить Instagram"
     instagramTextField.layer.addSublayer(bottomLine(textFiled: instagramTextField))
     instagramTextField.textColor = .black
+  }
+  
+  // MARK: - Private Methods
+  private func setupView() {
+    addSubviews()
+    addTarget()
+    setupSelfView()
+    setupNavigationController()
+    setupIconCardImageView()
+    setupChangePhotoButton()
+    setupNameLabel()
+    setupNameTextField()
+    setupDateLabel()
+    setupDateTextFieldWithItsToolbarAndDatePicker()
+    setupAgeLabel()
+    setupAgeTextFieldWithItsToolbarAndDatePicker()
+    setupSexLabel()
+    setupSexTextFieldWithItsToolbarAndDatePicker()
+    setupInstagramLabel()
+    setupInstagramTextField()
+    hideKeyboardWhenTappedAround()
+  }
+  
+  private func addSubviews() {
+    view.addSubview(iconCardImageView)
+    view.addSubview(changePhotoButton)
+    view.addSubview(nameLabel)
+    view.addSubview(nameTextField)
+    view.addSubview(dateLabel)
+    view.addSubview(dateTextField)
+    view.addSubview(ageLabel)
+    view.addSubview(ageTextField)
+    view.addSubview(sexLabel)
+    view.addSubview(sexTextField)
+    view.addSubview(instagramLabel)
+    view.addSubview(instagramTextField)
+  }
+  
+  private func addTarget() {
+    changePhotoButton.addTarget(self, action: #selector(changePhotoAction), for: .touchUpInside)
+    datePicker.addTarget(self, action: #selector(datePickerChange(parameDatePicker:)), for: .valueChanged)
   }
   
   @objc private func dissmis() {
@@ -215,6 +220,7 @@ final class BirthdayCardViewController: UIViewController {
   }
   
   @objc private func addCard() {
+    print("Добавление карточки")
   }
   
   @objc private func changePhotoAction() {
@@ -257,6 +263,7 @@ final class BirthdayCardViewController: UIViewController {
       textField.placeholder = "Например yashalava2022"
       textField.borderStyle = UITextField.BorderStyle.roundedRect
     }
+    
     let actionOfOK = UIAlertAction(title: "OK", style: .default) { action in
       if let text = alert.textFields?.first {
         if let txt = text.text {
@@ -264,13 +271,18 @@ final class BirthdayCardViewController: UIViewController {
         }
       }
     }
+    
     let actionOfCancel = UIAlertAction(title: "Cancel", style: .cancel) { action in
     }
     alert.addAction(actionOfOK)
     alert.addAction(actionOfCancel)
     present(alert, animated: true, completion: nil)
-    if let textFilds = alert.textFields {
-      for textField in textFilds {
+    
+    
+    
+    
+    if let textFields = alert.textFields {
+      for textField in textFields {
         let container = textField.superview
         let effectView = container?.superview?.subviews[0]
         if effectView != nil {
@@ -282,17 +294,19 @@ final class BirthdayCardViewController: UIViewController {
   }
 }
 
-extension BirthdayCardViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension BirthdayCardViewController: UIImagePickerControllerDelegate {
+  
+  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+    picker.dismiss(animated: true, completion: nil)
+  }
+}
+
+extension BirthdayCardViewController: UINavigationControllerDelegate {
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-    
     if let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage {
       iconCardImageView.image = image
     }
-    picker.dismiss(animated: true, completion: nil)
-  }
-  
-  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
     picker.dismiss(animated: true, completion: nil)
   }
 }

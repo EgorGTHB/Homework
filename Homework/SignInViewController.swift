@@ -1,7 +1,8 @@
 import UIKit
 
 final class SignInViewController: UIViewController {
-  private let appName = UILabel()
+  // MARK: - Private Properties
+  private let appNameLabel = UILabel()
   private let signInLabel = UILabel()
   private let emailLabel = UILabel()
   private let emailTextField = UITextField()
@@ -12,71 +13,37 @@ final class SignInViewController: UIViewController {
   private let switch1 = UISwitch()
   private let enterButton = UIButton(type: .system)
   
+  // MARK: - UIViewController()
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-    hideKeyboardWhenTappedAround()
   }
   
-  private func setupView() {
-    addSubviews()
-    addTarget()
-    setupSelfView()
-    setupAppName()
-    setupLines()
-    setupSignInLabel()
-    setupEmailLabel()
-    setupEmailTextField()
-    setupPasswordLabel()
-    setupPasswordTextField()
-    setupEyeButton()
-    setupEnterWithFaceIDLabel()
-    setupSwitch1()
-    setupEnterButton()
-  }
-  
-  private func addSubviews() {
-    view.addSubview(appName)
-    view.addSubview(signInLabel)
-    view.addSubview(emailLabel)
-    view.addSubview(emailTextField)
-    view.addSubview(passwordLabel)
-    view.addSubview(passwordTextField)
-    view.addSubview(eyeButton)
-    view.addSubview(enterWithFaceIDLabel)
-    view.addSubview(switch1)
-    view.addSubview(enterButton)
-  }
-  
-  private func addTarget() {
-    eyeButton.addTarget(self, action: #selector(buttonPasswordVisiblityClicked), for: .touchUpInside)
-    enterButton.addTarget(self, action: #selector(toListOfBirthdayViewController), for: .touchUpInside)
-  }
-  
+  // MARK: - Visual Components
   private func setupSelfView() {
     view.backgroundColor = .white
   }
   
-  private func setupAppName() {
-    appName.frame = CGRect(x: 112, y: 120, width: 200, height: 30)
-    appName.textAlignment = .center
-    appName.text = "Birthday Reminder"
-    appName.font = UIFont.systemFont(ofSize: 20, weight: .light)
-    appName.textColor = .systemBlue
+  private func setupAppNameLabel() {
+    appNameLabel.frame = CGRect(x: 112, y: 120, width: 200, height: 30)
+    appNameLabel.textAlignment = .center
+    appNameLabel.text = "Birthday Reminder"
+    appNameLabel.font = UIFont.systemFont(ofSize: 20, weight: .light)
+    appNameLabel.textColor = .systemBlue
   }
   
   private func setupLines() {
     let pointOverButton1 = CGPoint(x: 90, y: 90)
     let pointOverButton2 = CGPoint(x: 330, y: 90)
-    drawLine(start: pointOverButton1, toPoint: pointOverButton2, ofColor: .lightGray, inView: self.view)
     let pointUnderButton1 = CGPoint(x: 90, y: 180)
     let pointUnderButton2 = CGPoint(x: 330, y: 180)
-    drawLine(start: pointUnderButton1, toPoint: pointUnderButton2, ofColor: .lightGray, inView: self.view)
     let pointLeftButton1 = CGPoint(x: 90, y: 90)
     let pointLeftButton2 = CGPoint(x: 90, y: 180)
-    drawLine(start: pointLeftButton1, toPoint: pointLeftButton2, ofColor: .lightGray, inView: self.view)
     let pointRightButton1 = CGPoint(x: 330, y: 90)
     let pointRightButton2 = CGPoint(x: 330, y: 180)
+    drawLine(start: pointOverButton1, toPoint: pointOverButton2, ofColor: .lightGray, inView: self.view)
+    drawLine(start: pointUnderButton1, toPoint: pointUnderButton2, ofColor: .lightGray, inView: self.view)
+    drawLine(start: pointLeftButton1, toPoint: pointLeftButton2, ofColor: .lightGray, inView: self.view)
     drawLine(start: pointRightButton1, toPoint: pointRightButton2, ofColor: .lightGray, inView: self.view)
   }
   
@@ -98,7 +65,7 @@ final class SignInViewController: UIViewController {
   
   private func setupEmailTextField() {
     emailTextField.frame = CGRect(x: 56, y: 340, width: 300, height: 30)
-    emailTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+    emailTextField.contentVerticalAlignment = .center
     emailTextField.textAlignment = .left
     emailTextField.placeholder = "Email"
     emailTextField.layer.addSublayer(bottomLine(textFiled: emailTextField))
@@ -116,7 +83,7 @@ final class SignInViewController: UIViewController {
   
   private func setupPasswordTextField() {
     passwordTextField.frame = CGRect(x: 56, y: 430, width: 300, height: 30)
-    passwordTextField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+    passwordTextField.contentVerticalAlignment = .center
     passwordTextField.textAlignment = .left
     passwordTextField.placeholder = "Password"
     passwordTextField.isSecureTextEntry = true
@@ -162,6 +129,43 @@ final class SignInViewController: UIViewController {
     return bottomLine
   }
   
+  // MARK: - Private Methods
+  private func setupView() {
+    addSubviews()
+    addTarget()
+    setupSelfView()
+    hideKeyboardWhenTappedAround()
+    setupAppNameLabel()
+    setupLines()
+    setupSignInLabel()
+    setupEmailLabel()
+    setupEmailTextField()
+    setupPasswordLabel()
+    setupPasswordTextField()
+    setupEyeButton()
+    setupEnterWithFaceIDLabel()
+    setupSwitch1()
+    setupEnterButton()
+  }
+  
+  private func addSubviews() {
+    view.addSubview(appNameLabel)
+    view.addSubview(signInLabel)
+    view.addSubview(emailLabel)
+    view.addSubview(emailTextField)
+    view.addSubview(passwordLabel)
+    view.addSubview(passwordTextField)
+    view.addSubview(eyeButton)
+    view.addSubview(enterWithFaceIDLabel)
+    view.addSubview(switch1)
+    view.addSubview(enterButton)
+  }
+  
+  private func addTarget() {
+    eyeButton.addTarget(self, action: #selector(buttonPasswordVisiblityClicked), for: .touchUpInside)
+    enterButton.addTarget(self, action: #selector(toListOfBirthdayViewController), for: .touchUpInside)
+  }
+  
   @objc private func buttonPasswordVisiblityClicked(_ sender: UIButton) {
     sender.isSelected = !sender.isSelected
     if sender.isSelected {
@@ -196,6 +200,7 @@ extension SignInViewController {
     tap.cancelsTouchesInView = false
     view.addGestureRecognizer(tap)
   }
+  
   @objc private func dismissKeyboard() {
     view.endEditing(true)
   }

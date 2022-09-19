@@ -1,6 +1,7 @@
 import UIKit
 
 final class ListOfBirthdaysViewController: UIViewController {
+  // MARK: - Private Properties
   private let navigationItemLabel = UILabel()
   private let iconJeremyImageView = UIImageView()
   private let jeremyLabel = UILabel()
@@ -14,52 +15,20 @@ final class ListOfBirthdaysViewController: UIViewController {
   private let jonyStarkLabel = UILabel()
   private let descriptionOfJonyStarkBirthdayLabel = UILabel()
   private let jonyStarkDaysLabel = UILabel()
+  
   private let icon = UIImage(named: "Iconnn")
   
+  // MARK: - UIViewController()
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
   }
   
-  private func setupView() {
-    addSubviews()
-    setupSelfView()
-    setupNavigationController()
-    setupIconJeremyImageView()
-    setupJeremyLabel()
-    setupDescriptionOfJeremyBirthdayLabel()
-    setupLines()
-    setupJeremyDaysLabel()
-    setupIconMariaLuiImageView()
-    setupMariaLuiLabel()
-    setupDescriptionOfMariaLuiBirthdayLabel()
-    setupMariaLuiDaysLabel()
-    setupIconJonyStarkImageView()
-    setupJonyStarkLabel()
-    setupDescriptionOfJonyStarkBirthdayLabel()
-    setupJonyStarkDaysLabel()
-  }
-
-  private func addSubviews() {
-    view.addSubview(iconJeremyImageView)
-    view.addSubview(jeremyLabel)
-    view.addSubview(descriptionOfJeremyBirthdayLabel)
-    view.addSubview(jeremyDaysLabel)
-    view.addSubview(iconMariaLuiImageView)
-    view.addSubview(mariaLuiLabel)
-    view.addSubview(descriptionOfMariaLuiBirthdayLabel)
-    view.addSubview(mariaLuiDaysLabel)
-    view.addSubview(iconJonyStarkImageView)
-    view.addSubview(jonyStarkLabel)
-    view.addSubview(descriptionOfJonyStarkBirthdayLabel)
-    view.addSubview(jonyStarkDaysLabel)
-
-  }
-  
+  // MARK: - Visual Components
   private func setupSelfView() {
     view.backgroundColor = .white
   }
-
+  
   private func setupNavigationController() {
     navigationItemLabel.text = "Birthday"
     navigationItemLabel.font = UIFont(name: "Menlo-Bold", size: 18)
@@ -80,32 +49,32 @@ final class ListOfBirthdaysViewController: UIViewController {
   }
   
   private func setupDescriptionOfJeremyBirthdayLabel() {
-     descriptionOfJeremyBirthdayLabel.frame = CGRect(x: 80, y: 195, width: 400, height: 30)
-     descriptionOfJeremyBirthdayLabel.text = "10 марта, в среду исполнится 25 лет"
-     descriptionOfJeremyBirthdayLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-     descriptionOfJeremyBirthdayLabel.textColor = .gray
+    descriptionOfJeremyBirthdayLabel.frame = CGRect(x: 80, y: 195, width: 400, height: 30)
+    descriptionOfJeremyBirthdayLabel.text = "10 марта, в среду исполнится 25 лет"
+    descriptionOfJeremyBirthdayLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+    descriptionOfJeremyBirthdayLabel.textColor = .gray
   }
   
   private func setupLines() {
     let pointJeremy1 = CGPoint(x: 20, y: 240)
     let pointJeremy2 = CGPoint(x: 415, y: 240)
-    drawLine(start: pointJeremy1, toPoint: pointJeremy2, ofColor: .lightGray, inView: view)
     let pointMariaLui1 = CGPoint(x: 20, y: 360)
     let pointMariaLui2 = CGPoint(x: 415, y: 360)
-    drawLine(start: pointMariaLui1, toPoint: pointMariaLui2, ofColor: .lightGray, inView: view)
     let pointJonyStark1 = CGPoint(x: 20, y: 480)
     let pointJonyStark2 = CGPoint(x: 415, y: 480)
+    drawLine(start: pointJeremy1, toPoint: pointJeremy2, ofColor: .lightGray, inView: view)
+    drawLine(start: pointMariaLui1, toPoint: pointMariaLui2, ofColor: .lightGray, inView: view)
     drawLine(start: pointJonyStark1, toPoint: pointJonyStark2, ofColor: .lightGray, inView: view)
   }
-
+  
   private func setupJeremyDaysLabel() {
-    jeremyDaysLabel.frame = CGRect(x: 310, y: 170, width: 130, height: 30)
     let diffDateForJeremy = dateDifference(day: 10, month: 3, year: 2022)
+    jeremyDaysLabel.frame = CGRect(x: 310, y: 170, width: 130, height: 30)
     jeremyDaysLabel.text = "\(diffDateForJeremy) дней"
     jeremyDaysLabel.font = UIFont.systemFont(ofSize: 19, weight: .medium)
     jeremyDaysLabel.textColor = .gray
   }
-
+  
   private func setupIconMariaLuiImageView() {
     iconMariaLuiImageView.image = icon
     iconMariaLuiImageView.frame = CGRect(x: 5, y: 283, width: 70, height: 70)
@@ -123,10 +92,10 @@ final class ListOfBirthdaysViewController: UIViewController {
     descriptionOfMariaLuiBirthdayLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
     descriptionOfMariaLuiBirthdayLabel.textColor = .lightGray
   }
-
+  
   private func setupMariaLuiDaysLabel() {
-    mariaLuiDaysLabel.frame = CGRect(x: 320, y: 290, width: 130, height: 30)
     let diffDateForMariaLui = dateDifference(day: 30, month: 3, year: 2022)
+    mariaLuiDaysLabel.frame = CGRect(x: 320, y: 290, width: 130, height: 30)
     mariaLuiDaysLabel.text = "\(diffDateForMariaLui) дней"
     mariaLuiDaysLabel.font = UIFont.systemFont(ofSize: 19, weight: .medium)
     mariaLuiDaysLabel.textColor = .gray
@@ -152,14 +121,49 @@ final class ListOfBirthdaysViewController: UIViewController {
   }
   
   private func setupJonyStarkDaysLabel() {
-    jonyStarkDaysLabel.frame = CGRect(x: 320, y: 410, width: 130, height: 30)
     let diffDateForJonyStark = dateDifference(day: 20, month: 4, year: 2022)
+    jonyStarkDaysLabel.frame = CGRect(x: 320, y: 410, width: 130, height: 30)
     jonyStarkDaysLabel.text = "\(diffDateForJonyStark) дней"
     jonyStarkDaysLabel.text = "53 дней"
     jonyStarkDaysLabel.font = UIFont.systemFont(ofSize: 19, weight: .medium)
     jonyStarkDaysLabel.textColor = .gray
   }
-
+  
+  // MARK: - Private Methods
+  private func setupView() {
+    addSubviews()
+    setupSelfView()
+    setupNavigationController()
+    setupIconJeremyImageView()
+    setupJeremyLabel()
+    setupDescriptionOfJeremyBirthdayLabel()
+    setupLines()
+    setupJeremyDaysLabel()
+    setupIconMariaLuiImageView()
+    setupMariaLuiLabel()
+    setupDescriptionOfMariaLuiBirthdayLabel()
+    setupMariaLuiDaysLabel()
+    setupIconJonyStarkImageView()
+    setupJonyStarkLabel()
+    setupDescriptionOfJonyStarkBirthdayLabel()
+    setupJonyStarkDaysLabel()
+  }
+  
+  private func addSubviews() {
+    view.addSubview(iconJeremyImageView)
+    view.addSubview(jeremyLabel)
+    view.addSubview(descriptionOfJeremyBirthdayLabel)
+    view.addSubview(jeremyDaysLabel)
+    view.addSubview(iconMariaLuiImageView)
+    view.addSubview(mariaLuiLabel)
+    view.addSubview(descriptionOfMariaLuiBirthdayLabel)
+    view.addSubview(mariaLuiDaysLabel)
+    view.addSubview(iconJonyStarkImageView)
+    view.addSubview(jonyStarkLabel)
+    view.addSubview(descriptionOfJonyStarkBirthdayLabel)
+    view.addSubview(jonyStarkDaysLabel)
+  }
+  
   @objc private func addTapped() {
     let birthdayСardViewController = BirthdayCardViewController()
     navigationController?.pushViewController(birthdayСardViewController, animated: true)
