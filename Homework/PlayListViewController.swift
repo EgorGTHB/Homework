@@ -14,7 +14,7 @@ final class PlayListViewController: UIViewController {
   
   private let september3Image = UIImage(named: "3 сентября")
   private let minutes4Image = UIImage(named: "4 Minutes")
-
+  
   // MARK: - UIViewController
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,7 +26,7 @@ final class PlayListViewController: UIViewController {
     navigationItemLabel.text = "Playlist"
     navigationItemLabel.font = UIFont(name: "AppleSymbols", size: 32)
     navigationItem.titleView = navigationItemLabel
-   }
+  }
   
   private func setupSeptember3ImageView() {
     september3ImageView.image = september3Image
@@ -46,17 +46,18 @@ final class PlayListViewController: UIViewController {
     september3DurationLabel.font = UIFont.systemFont(ofSize: 19, weight: .medium)
     september3DurationLabel.textColor = .gray
   }
- 
+  
   private func setup3SeptemberButton() {
     september3Button.frame = CGRect(x: 0, y: 163, width: 414, height: 77)
   }
- 
+  
   private func setupLines() {
     let pointSeptember31 = CGPoint(x: 10, y: 240)
     let pointSeptember32 = CGPoint(x: 405, y: 240)
-    drawLine(start: pointSeptember31, toPoint: pointSeptember32, ofColor: .lightGray, inView: view)
     let pointMinutes41 = CGPoint(x: 10, y: 360)
     let pointMinutes42 = CGPoint(x: 405, y: 360)
+    
+    drawLine(start: pointSeptember31, toPoint: pointSeptember32, ofColor: .lightGray, inView: view)
     drawLine(start: pointMinutes41, toPoint: pointMinutes42, ofColor: .lightGray, inView: view)
   }
   
@@ -122,35 +123,34 @@ final class PlayListViewController: UIViewController {
   
   @objc private func toSongViewControllerWithMihail() {
     let songViewController = SongViewController()
-    if let img = september3Image {
+    guard let img = september3Image else { return }
     songViewController.iconAlbum = img
-    }
-    if let nm = september3Label.text {
+    guard let nm = september3Label.text else { return }
     songViewController.topName = nm
     songViewController.bottomName = nm
-    }
     songViewController.rightSlider = "06:21"
     songViewController.singer = "Михаил Шуфутинский"
     songViewController.track = "mihail"
     present(songViewController, animated: true, completion: nil)
   }
- 
+  
   @objc private func toSongViewControllerWithMadonna() {
     let songViewController = SongViewController()
-    if let img = minutes4Image {
+    guard let img = minutes4Image else { return }
     songViewController.iconAlbum = img
-    }
-    if let nm = minutes4Label.text {
+    guard let nm = minutes4Label.text else { return }
     songViewController.topName = nm
     songViewController.bottomName = nm
-    }
     songViewController.rightSlider = "03:10"
     songViewController.singer = "Madonna"
     songViewController.track = "madonna"
     present(songViewController, animated: true, completion: nil)
   }
- 
-  private func drawLine(start : CGPoint, toPoint end:CGPoint, ofColor lineColor: UIColor, inView view:UIView) {
+}
+
+extension UIViewController {
+  
+  func drawLine(start: CGPoint, toPoint end: CGPoint, ofColor lineColor: UIColor, inView view:UIView) {
     let path = UIBezierPath()
     path.move(to: start)
     path.addLine(to: end)
@@ -161,10 +161,6 @@ final class PlayListViewController: UIViewController {
     view.layer.addSublayer(shapeLayer)
   }
 }
-
-
-
-
 
 
 

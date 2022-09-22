@@ -275,18 +275,17 @@ final class SongViewController: UIViewController {
   }
   
   @objc private func share() {
-    if let nameOfSongs = topNameOfTheSongLabel.text {
-      let items = ["Послушай песню: \(nameOfSongs)"]
-      let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
-      present(ac, animated: true)
-    }
+    guard let nameOfSongs = topNameOfTheSongLabel.text else { return }
+    let items = ["Послушай песню: \(nameOfSongs)"]
+    let ac = UIActivityViewController(activityItems: items as [Any], applicationActivities: nil)
+    present(ac, animated: true)
   }
   
   private func setupPlayer() {
     do{
-      if let audioPath = Bundle.main.path(forResource: track, ofType: "mp3") {
-        try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
-      }
+      guard let audioPath = Bundle.main.path(forResource: track, ofType: "mp3") else { return }
+      try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath))
+      
     } catch {
       print("Error")
     }
@@ -295,14 +294,14 @@ final class SongViewController: UIViewController {
   }
   
   @objc private func changePointOfTrackSlider(sender: UISlider) {
-    if sender == pointOfTrackSlider {
+    guard sender == pointOfTrackSlider else { return }
       player.currentTime = TimeInterval(sender.value)
       leftSliderLabel.text = convertToMinutes(intSeconds: Int(    pointOfTrackSlider.value))
-    }
+  
   }
   
   @objc private func pausePlayButtonTapped() {
-    shouldPlay = !shouldPlay
+    shouldPlay.toggle()
     if shouldPlay {
       let configuration = UIImage.SymbolConfiguration(pointSize: 40, weight: .regular)
       let image = UIImage(systemName: "play.fill", withConfiguration: configuration)
@@ -324,32 +323,41 @@ final class SongViewController: UIViewController {
   
   @objc private func forwardOrBackwardButtonTapped() {
     if track == "mihail" {
-      iconAlbumImageView.image = UIImage(named: "4 Minutes")
-      topNameOfTheSongLabel.text = "4 Minutes"
-      bottomNameOfTheSongLabel.text = "4 Minutes"
-      singerLabel.text = "Madonna"
-      track = "madonna"
-      leftSliderLabel.text = "00:00"
-      rightSliderLabel.text = "03:10"
-      setupPlayer()
-      pointOfTrackSlider.value = 0.0
-      player.play()
+      setupMadonna()
     } else {
-      iconAlbumImageView.image = UIImage(named: "3 сентября")
-      topNameOfTheSongLabel.text = "3 сентября"
-      bottomNameOfTheSongLabel.text = "3 сентября"
-      singerLabel.text = "Шуфутинский"
-      leftSliderLabel.text = "00:00"
-      rightSliderLabel.text = "06:21"
-      track = "mihail"
-      setupPlayer()
-      pointOfTrackSlider.value = 0.0
-      player.play()
+      setupMihail()
     }
   }
   
+  private func setupMadonna() {
+    iconAlbumImageView.image = UIImage(named: "4 Minutes")
+    topNameOfTheSongLabel.text = "4 Minutes"
+    bottomNameOfTheSongLabel.text = "4 Minutes"
+    singerLabel.text = "Madonna"
+    track = "madonna"
+    leftSliderLabel.text = "00:00"
+    rightSliderLabel.text = "03:10"
+    setupPlayer()
+    pointOfTrackSlider.value = 0.0
+    player.play()
+  }
+  
+  private func setupMihail() {
+    iconAlbumImageView.image = UIImage(named: "3 сентября")
+    topNameOfTheSongLabel.text = "3 сентября"
+    bottomNameOfTheSongLabel.text = "3 сентября"
+    singerLabel.text = "Шуфутинский"
+    leftSliderLabel.text = "00:00"
+    rightSliderLabel.text = "06:21"
+    track = "mihail"
+    setupPlayer()
+    pointOfTrackSlider.value = 0.0
+    player.play()
+  }
+
+  
   @objc private func rightRepeatButtonTapped() {
-    repeatIs = !repeatIs
+    repeatIs.toggle()
     if repeatIs {
       let configuration = UIImage.SymbolConfiguration(pointSize: 18, weight: .bold)
       let image = UIImage(systemName: "repeat", withConfiguration: configuration)
@@ -370,17 +378,10 @@ final class SongViewController: UIViewController {
   }
   
   @objc private func changeSliderVolume(sender: UISlider) {
-    if sender == volumeSlider {
-      player.volume = sender.value
-    }
+    guard sender == volumeSlider else { return }
+    player.volume = sender.value
   }
   
-  private func convertToMinutes(intSeconds: Int) -> String {
-    let mins: Int = intSeconds / 60
-    let secs: Int = intSeconds % 60
-    let strTimestamp: String = ((mins<10) ? "0" : "") + String(mins) + ":" + ((secs<10) ? "0" : "") + String(secs)
-    return strTimestamp
-  }
   
   @objc private func updateSlider() {
     pointOfTrackSlider.value = Float(player.currentTime)
@@ -388,6 +389,12 @@ final class SongViewController: UIViewController {
   }
 }
 
-
-
-
+extension UIViewController {
+  
+    func convertToMinutes(intSeconds: Int) -> String {
+    let mins: Int = intSeconds / 60
+    let secs: Int = intSeconds % 60
+    let strTimestamp: String = ((mins<10) ? "0" : "") + String(mins) + ":" + ((secs<10) ? "0" : "") + String(secs)
+    return strTimestamp
+  }
+}
