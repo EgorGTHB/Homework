@@ -341,40 +341,6 @@ final class SongViewController: UIViewController {
       pointOfTrackSlider.value = pointSlider
       player.play()
     }
-
-  
-  
-  
-  
-  
-  
-  
-  
-//  private func initSong(_: String) {
-//    if track == "mihail" {
-//      iconAlbumImageView.image = UIImage(named: "4 Minutes")
-//      topNameOfTheSongLabel.text = "4 Minutes"
-//      bottomNameOfTheSongLabel.text = "4 Minutes"
-//      singerLabel.text = "Madonna"
-//      track = "madonna"
-//      leftSliderLabel.text = "00:00"
-//      rightSliderLabel.text = "03:10"
-//      setupPlayer()
-//      pointOfTrackSlider.value = 0.0
-//      player.play()
-//    } else {
-//      iconAlbumImageView.image = UIImage(named: "3 сентября")
-//      topNameOfTheSongLabel.text = "3 сентября"
-//      bottomNameOfTheSongLabel.text = "3 сентября"
-//      singerLabel.text = "Шуфутинский"
-//      leftSliderLabel.text = "00:00"
-//      rightSliderLabel.text = "06:21"
-//      track = "mihail"
-//      setupPlayer()
-//      pointOfTrackSlider.value = 0.0
-//      player.play()
-//    }
-//  }
  
   @objc private func rightRepeatButtonTapped() {
     repeatIs.toggle()
