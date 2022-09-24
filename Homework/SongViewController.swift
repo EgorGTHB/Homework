@@ -323,39 +323,59 @@ final class SongViewController: UIViewController {
   
   @objc private func forwardOrBackwardButtonTapped() {
     if track == "mihail" {
-      setupMadonna()
+    initSong(image: "4 Minutes", nameOfSong: "4 Minutes", singer: "Madonna", nameOfTrack: "madonna", sliderOneLabel: "00:00", sliderTwoLabel: "03:10", pointSlider: 0.0)
     } else {
-      setupMihail()
+      initSong(image: "3 сентября", nameOfSong: "3 сентября", singer: "Шуфутинский", nameOfTrack: "mihail", sliderOneLabel: "00:00", sliderTwoLabel: "06:21", pointSlider: 0.0)
     }
   }
-  
-  private func setupMadonna() {
-    iconAlbumImageView.image = UIImage(named: "4 Minutes")
-    topNameOfTheSongLabel.text = "4 Minutes"
-    bottomNameOfTheSongLabel.text = "4 Minutes"
-    singerLabel.text = "Madonna"
-    track = "madonna"
-    leftSliderLabel.text = "00:00"
-    rightSliderLabel.text = "03:10"
-    setupPlayer()
-    pointOfTrackSlider.value = 0.0
-    player.play()
-  }
-  
-  private func setupMihail() {
-    iconAlbumImageView.image = UIImage(named: "3 сентября")
-    topNameOfTheSongLabel.text = "3 сентября"
-    bottomNameOfTheSongLabel.text = "3 сентября"
-    singerLabel.text = "Шуфутинский"
-    leftSliderLabel.text = "00:00"
-    rightSliderLabel.text = "06:21"
-    track = "mihail"
-    setupPlayer()
-    pointOfTrackSlider.value = 0.0
-    player.play()
-  }
+ 
+  private func initSong(image: String, nameOfSong: String, singer: String, nameOfTrack: String, sliderOneLabel: String, sliderTwoLabel: String, pointSlider: Float ) {
+      iconAlbumImageView.image = UIImage(named: image)
+      topNameOfTheSongLabel.text = nameOfSong
+      bottomNameOfTheSongLabel.text = nameOfSong
+      singerLabel.text = singer
+      track = nameOfTrack
+      leftSliderLabel.text = sliderOneLabel
+      rightSliderLabel.text = sliderTwoLabel
+      setupPlayer()
+      pointOfTrackSlider.value = pointSlider
+      player.play()
+    }
 
   
+  
+  
+  
+  
+  
+  
+  
+//  private func initSong(_: String) {
+//    if track == "mihail" {
+//      iconAlbumImageView.image = UIImage(named: "4 Minutes")
+//      topNameOfTheSongLabel.text = "4 Minutes"
+//      bottomNameOfTheSongLabel.text = "4 Minutes"
+//      singerLabel.text = "Madonna"
+//      track = "madonna"
+//      leftSliderLabel.text = "00:00"
+//      rightSliderLabel.text = "03:10"
+//      setupPlayer()
+//      pointOfTrackSlider.value = 0.0
+//      player.play()
+//    } else {
+//      iconAlbumImageView.image = UIImage(named: "3 сентября")
+//      topNameOfTheSongLabel.text = "3 сентября"
+//      bottomNameOfTheSongLabel.text = "3 сентября"
+//      singerLabel.text = "Шуфутинский"
+//      leftSliderLabel.text = "00:00"
+//      rightSliderLabel.text = "06:21"
+//      track = "mihail"
+//      setupPlayer()
+//      pointOfTrackSlider.value = 0.0
+//      player.play()
+//    }
+//  }
+ 
   @objc private func rightRepeatButtonTapped() {
     repeatIs.toggle()
     if repeatIs {
