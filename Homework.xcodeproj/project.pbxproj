@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		7443259C28C5021A009D8085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259B28C5021A009D8085 /* AppDelegate.swift */; };
 		7443259E28C5021A009D8085 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259D28C5021A009D8085 /* SceneDelegate.swift */; };
-		744325A028C5021A009D8085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259F28C5021A009D8085 /* ViewController.swift */; };
+		744325A028C5021A009D8085 /* SharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259F28C5021A009D8085 /* SharingViewController.swift */; };
 		744325A328C5021A009D8085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744325A128C5021A009D8085 /* Main.storyboard */; };
 		744325A528C5021B009D8085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744325A428C5021B009D8085 /* Assets.xcassets */; };
 		744325A828C5021B009D8085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744325A628C5021B009D8085 /* LaunchScreen.storyboard */; };
+		74BC0A9E28DF6F8E001B6DA2 /* SharingPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BC0A9D28DF6F8E001B6DA2 /* SharingPickerViewController.swift */; };
+		74BC0AA428DF9B95001B6DA2 /* CustomActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BC0AA328DF9B95001B6DA2 /* CustomActivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7443259828C5021A009D8085 /* Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7443259B28C5021A009D8085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7443259D28C5021A009D8085 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7443259F28C5021A009D8085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7443259F28C5021A009D8085 /* SharingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingViewController.swift; sourceTree = "<group>"; };
 		744325A228C5021A009D8085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		744325A428C5021B009D8085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		744325A728C5021B009D8085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		744325A928C5021B009D8085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74BC0A9D28DF6F8E001B6DA2 /* SharingPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingPickerViewController.swift; sourceTree = "<group>"; };
+		74BC0AA328DF9B95001B6DA2 /* CustomActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				7443259B28C5021A009D8085 /* AppDelegate.swift */,
 				7443259D28C5021A009D8085 /* SceneDelegate.swift */,
-				7443259F28C5021A009D8085 /* ViewController.swift */,
+				7443259F28C5021A009D8085 /* SharingViewController.swift */,
+				74BC0A9D28DF6F8E001B6DA2 /* SharingPickerViewController.swift */,
 				744325A128C5021A009D8085 /* Main.storyboard */,
 				744325A428C5021B009D8085 /* Assets.xcassets */,
 				744325A628C5021B009D8085 /* LaunchScreen.storyboard */,
 				744325A928C5021B009D8085 /* Info.plist */,
+				74BC0AA328DF9B95001B6DA2 /* CustomActivity.swift */,
 			);
 			path = Homework;
 			sourceTree = "<group>";
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				744325A028C5021A009D8085 /* ViewController.swift in Sources */,
+				744325A028C5021A009D8085 /* SharingViewController.swift in Sources */,
 				7443259C28C5021A009D8085 /* AppDelegate.swift in Sources */,
+				74BC0AA428DF9B95001B6DA2 /* CustomActivity.swift in Sources */,
 				7443259E28C5021A009D8085 /* SceneDelegate.swift in Sources */,
+				74BC0A9E28DF6F8E001B6DA2 /* SharingPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +295,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FH3RJ28233;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Homework/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -314,6 +323,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FH3RJ28233;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Homework/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
