@@ -64,11 +64,11 @@
 				7443259D28C5021A009D8085 /* SceneDelegate.swift */,
 				7443259F28C5021A009D8085 /* SharingViewController.swift */,
 				74BC0A9D28DF6F8E001B6DA2 /* SharingPickerViewController.swift */,
+				74BC0AA328DF9B95001B6DA2 /* CustomActivity.swift */,
 				744325A128C5021A009D8085 /* Main.storyboard */,
 				744325A428C5021B009D8085 /* Assets.xcassets */,
 				744325A628C5021B009D8085 /* LaunchScreen.storyboard */,
 				744325A928C5021B009D8085 /* Info.plist */,
-				74BC0AA328DF9B95001B6DA2 /* CustomActivity.swift */,
 			);
 			path = Homework;
 			sourceTree = "<group>";
