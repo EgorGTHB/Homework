@@ -5,7 +5,7 @@ final class SharingViewController: UIViewController {
   private var shareButton = UIButton(type: .system)
   private var nextVCButton = UIButton(type: .system)
   private var textfield = UITextField()
-  private var activityViewController: UIActivityViewController? = nil
+  private var activityViewController: UIActivityViewController?
   
   // MARK: - UIViewController()
   override func viewDidLoad() {
@@ -14,7 +14,7 @@ final class SharingViewController: UIViewController {
   }
   
   // MARK: - Visual Components
-  func createTextfield() {
+  private func createTextfield() {
     textfield.frame = CGRect(x: 0, y: 0, width: 280, height: 30)
     textfield.center = view.center
     textfield.delegate = self
@@ -22,13 +22,13 @@ final class SharingViewController: UIViewController {
     textfield.placeholder = "Enter text to share"
   }
   
-  func createButton() {
+  private func createButton() {
     shareButton.frame = CGRect(x: 157, y: 500, width: 100, height: 44)
     shareButton.setTitle("Расшарить", for: .normal)
     shareButton.backgroundColor = .black
   }
   
-  func createNextVCButton() {
+  private func createNextVCButton() {
     nextVCButton.frame = CGRect(x: 157, y: 700, width: 100, height: 44)
     nextVCButton.setTitle("NextVC", for: .normal)
     nextVCButton.backgroundColor = .black
@@ -60,15 +60,12 @@ final class SharingViewController: UIViewController {
     nextVCButton.addTarget(self, action: #selector(toSharingPickerViewController), for: .touchUpInside)
   }
   
-  @objc func handleShare(paramSender: Any) {
-    let text = textfield.text
-    if text?.count == 0 {
-      let message = "Сначало введите текст, потом нажмите кнопку"
-      let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-      let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-      alertController.addAction(action)
-      present(alertController, animated: true, completion: nil)
+  @objc private func handleShare(paramSender: Any) {
+    guard let text = textfield.text else { return }
+    if text.isEmpty {
+      alert(alertText: nil, alertMessage: "Сначало введите текст, потом нажмите кнопку", alertAction: nil)
     }
+    
     guard let image = UIImage(named: "facebook") else { return }
     guard let textOfTextfield = textfield.text else { return }
     activityViewController = UIActivityViewController(activityItems: [textOfTextfield, image], applicationActivities: nil)
@@ -82,6 +79,7 @@ final class SharingViewController: UIViewController {
 }
 
 extension UIViewController: UITextFieldDelegate {
+  
   public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     textField.resignFirstResponder()
     return true
@@ -99,4 +97,12 @@ extension UIViewController {
   @objc func hideKeyboard() {
     view.endEditing(true)
   }
+  
+  func alert(alertText : String?, alertMessage : String?, alertAction: ((UIAlertAction) -> Void)?) {
+    let alertController = UIAlertController(title: alertText, message: alertMessage, preferredStyle: .alert)
+    let action = UIAlertAction(title: "OK", style: .cancel, handler: alertAction)
+    alertController.addAction(action)
+    present(alertController, animated: true, completion: nil)
+  }
 }
+

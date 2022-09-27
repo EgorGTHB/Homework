@@ -1,19 +1,18 @@
 import UIKit
 
-class CustomActivity: UIActivity {
+final class CustomActivity: UIActivity {
   
-  var title: String
-  var image: UIImage?
-  var items: [Any] = [Any]()
-  var action:([Any]) -> Void
+  private let title: String
+  private let image: UIImage?
+  private let action:([Any]) -> Void
+  private var items: [Any] = [Any]()
+  
   
   init(title: String, image: UIImage?, action: @escaping ([Any]) -> Void) {
     self.title = title
-    
     self.image = image
     self.action = action
     super.init()
-
   }
   
   override var activityTitle: String? {

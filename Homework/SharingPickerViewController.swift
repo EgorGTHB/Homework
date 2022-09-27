@@ -1,10 +1,10 @@
 import UIKit
 
-class SharingPickerViewController: UIViewController {
+final class SharingPickerViewController: UIViewController {
   // MARK: - Private Properties
   private let textfield = UITextField()
   private let choicePicker = UIPickerView()
-  private var activityViewController: UIActivityViewController? = nil
+  private var activityViewController: UIActivityViewController? 
   
   private let array = ["Нравится", "Не нравится", "Поделиться"]
   
@@ -15,13 +15,13 @@ class SharingPickerViewController: UIViewController {
   }
   
   // MARK: - Visual Components
-  func createPicker() {
+  private func createPicker() {
     choicePicker.frame = CGRect(x: 107, y: 500, width: 200, height: 100)
     choicePicker.delegate = self
     choicePicker.dataSource = self
   }
   
-  func createTextfield() {
+  private func createTextfield() {
     textfield.frame = CGRect(x: 0, y: 0, width: 280, height: 30)
     textfield.center = view.center
     textfield.delegate = self
@@ -48,8 +48,8 @@ class SharingPickerViewController: UIViewController {
   }
   
   @objc func handleShare(paramSender: Any) {
-    let text = textfield.text
-    if text?.count == 0 {
+    guard let text = textfield.text else { return }
+    if text.isEmpty {
       let message = "Сначало введите текст, потом нажмите кнопку"
       let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
       let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
