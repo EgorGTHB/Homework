@@ -119,14 +119,6 @@ class ChangeProductViewController: UIViewController {
     addToBagButton.addTarget(self, action: #selector(goToInfoVC), for: .touchUpInside)
   }
   
-  @objc private func goToInfoVC() {
-    let infoViewController = InfoViewController()
-    infoViewController.image = image
-    infoViewController.color = color
-    infoViewController.size = size
-    navigationController?.pushViewController(infoViewController, animated: true)
-  }
-  
   private func addSubviews() {
     view.addSubview(brandLabel)
     view.addSubview(modelLabel)
@@ -143,6 +135,14 @@ class ChangeProductViewController: UIViewController {
     imageView.image =  UIImage(named: "\(imageArray[segmentIndex])")
     color = segmentColor
     image = imageArray[segmentIndex]
+  }
+
+  @objc private func goToInfoVC() {
+    let infoViewController = InfoViewController()
+    infoViewController.image = image
+    infoViewController.color = color
+    infoViewController.size = size
+    navigationController?.pushViewController(infoViewController, animated: true)
   }
 }
 

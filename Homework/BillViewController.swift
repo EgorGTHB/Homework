@@ -16,7 +16,7 @@ class BillViewController: UIViewController {
   // MARK: - Public Properties
   var color = String()
   var size = String()
-  var image = UIImage()
+  var image = String()
   
   // MARK: - UIViewController
   override func viewDidLoad() {
@@ -33,7 +33,7 @@ class BillViewController: UIViewController {
   
   private func setupImageView() {
     imageView.frame = CGRect(x: 20, y: 230, width: 170, height: 170)
-    imageView.image = image
+    imageView.image = UIImage(named: image)
   }
   
   private func setupPriceLabel() {
