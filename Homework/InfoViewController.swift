@@ -16,7 +16,7 @@ final class InfoViewController: UIViewController {
   // MARK: - Public Properties
   var color = String()
   var size = String()
-  var image = UIImage()
+  var image = String()
   
   // MARK: - UIViewController
   override func viewDidLoad() {
@@ -140,7 +140,8 @@ final class InfoViewController: UIViewController {
     let alertControllerOfBill = UIAlertController(title: "Перейти к оплате", message: "", preferredStyle: .alert)
     let actionOfBill = UIAlertAction(title: "Оплата", style: .default) { action in
       let billViewController = BillViewController()
-      billViewController.image = self.image
+      guard let img = UIImage(named: "\(self.image)") else { return }
+      billViewController.image = img
       billViewController.color = self.color
       billViewController.size = self.size
       self.navigationController?.pushViewController(billViewController, animated: true)

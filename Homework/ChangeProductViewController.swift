@@ -12,12 +12,12 @@ class ChangeProductViewController: UIViewController {
   private let addToBagButton = UIButton(type: .system)
   
   private let menuArray = ["черный", "синий", "серый"]
-  private let imageArray = [UIImage(named: "shopping.jpg"),
-                            UIImage(named: "shopping2.jpg"),
-                            UIImage(named: "shopping3.jpg")]
+  private let imageArray = ["shopping.jpg",
+                            "shopping2.jpg",
+                            "shopping3.jpg"]
   private var color = "черный"
   private var size = "36"
-  private var image = UIImage(named: "shopping.jpg")
+  private var image = "shopping.jpg"
   
   // MARK: - UIViewController
   override func viewDidLoad() {
@@ -49,7 +49,7 @@ class ChangeProductViewController: UIViewController {
   private func setupImageView() {
     imageView.frame = CGRect(x: 98, y: 50, width: 500, height: 500)
     imageView.center = view.center
-    imageView.image = imageArray[0]
+    imageView.image = UIImage(named: "\(imageArray[0])")
   }
   
   private func setupSegmentedControll() {
@@ -121,8 +121,7 @@ class ChangeProductViewController: UIViewController {
   
   @objc private func goToInfoVC() {
     let infoViewController = InfoViewController()
-    guard let img = image else { return }
-    infoViewController.image = img
+    infoViewController.image = image
     infoViewController.color = color
     infoViewController.size = size
     navigationController?.pushViewController(infoViewController, animated: true)
@@ -140,11 +139,10 @@ class ChangeProductViewController: UIViewController {
   @objc private func selectedValue(target: UISegmentedControl) {
     guard target == segmentedControll else { return }
     let segmentIndex = target.selectedSegmentIndex
-    imageView.image = imageArray[segmentIndex]
     guard let segmentColor = target.titleForSegment(at: segmentIndex) else { return }
+    imageView.image =  UIImage(named: "\(imageArray[segmentIndex])")
     color = segmentColor
-    guard let img = imageArray[segmentIndex] else { return }
-    image = img
+    image = imageArray[segmentIndex]
   }
 }
 
