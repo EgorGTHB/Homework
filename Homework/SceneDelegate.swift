@@ -4,7 +4,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   var window: UIWindow?
   
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-    if let ws = scene as? UIWindowScene {
+      guard let ws = (scene as? UIWindowScene) else { return }
       let myWindow = UIWindow(windowScene: ws)
       let navigationController = UINavigationController()
       let signInViewController = SignInViewController()
@@ -12,7 +12,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       myWindow.rootViewController = navigationController
       self.window = myWindow
       myWindow.makeKeyAndVisible()
-    }
-    guard let _ = (scene as? UIWindowScene) else { return }
   }
 }
