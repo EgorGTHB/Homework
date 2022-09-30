@@ -10,9 +10,9 @@ final class TimerViewController: UIViewController {
   private let stopLabel = UILabel()
   private let chevronImageView = UIImageView()
   
-  private var hour: Int = 0
-  private var minutes: Int = 0
-  private var seconds: Int = 0
+  var hour: Int = 0
+  var minutes: Int = 0
+  var seconds: Int = 0
   
   // MARK: - UIViewController
   override func viewDidLoad() {
@@ -73,6 +73,7 @@ final class TimerViewController: UIViewController {
   
   private func setupChevronImageView() {
     let configuration = UIImage.SymbolConfiguration(pointSize: 16, weight: .regular)
+    
     chevronImageView.frame = CGRect(x: 360, y: 668, width: 13, height: 15)
     chevronImageView.image = UIImage(systemName: "chevron.right", withConfiguration: configuration)
     chevronImageView.tintColor = .gray
@@ -113,57 +114,6 @@ final class TimerViewController: UIViewController {
   
   @objc private func buttonTapped(sender: UIButton) {
     sender.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 23/255, alpha: 1)
-  }
-}
-
-extension TimerViewController: UIPickerViewDelegate {
-  
-  func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-    return pickerView.frame.size.width/3
-  }
-  
-  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    switch component {
-    case 0:
-      return "\(row) ч"
-    case 1:
-      return "\(row) мин"
-    case 2:
-      return "\(row) с"
-    default:
-      return ""
-    }
-  }
-  
-  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-    switch component {
-    case 0:
-      hour = row
-    case 1:
-      minutes = row
-    case 2:
-      seconds = row
-    default:
-      break;
-    }
-  }
-}
-
-extension TimerViewController: UIPickerViewDataSource {
-  
-  func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    return 3
-  }
-  
-  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    switch component {
-    case 0:
-      return 24
-    case 1, 2:
-      return 60
-    default:
-      return 0
-    }
   }
 }
 
