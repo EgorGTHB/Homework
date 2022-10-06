@@ -12,7 +12,6 @@
 		741741A728E5B879007601C0 /* StopwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741741A628E5B879007601C0 /* StopwatchViewController.swift */; };
 		741741A928E5BED7007601C0 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741741A828E5BED7007601C0 /* TimerViewController.swift */; };
 		741741AB28E74DC1007601C0 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741741AA28E74DC1007601C0 /* UIViewController+extension.swift */; };
-		741741AD28E74EEC007601C0 /* TimerViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741741AC28E74EEC007601C0 /* TimerViewController+extensions.swift */; };
 		7443259C28C5021A009D8085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259B28C5021A009D8085 /* AppDelegate.swift */; };
 		7443259E28C5021A009D8085 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259D28C5021A009D8085 /* SceneDelegate.swift */; };
 		744325A028C5021A009D8085 /* WorldTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259F28C5021A009D8085 /* WorldTimeViewController.swift */; };
@@ -27,7 +26,6 @@
 		741741A628E5B879007601C0 /* StopwatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchViewController.swift; sourceTree = "<group>"; };
 		741741A828E5BED7007601C0 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		741741AA28E74DC1007601C0 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
-		741741AC28E74EEC007601C0 /* TimerViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimerViewController+extensions.swift"; sourceTree = "<group>"; };
 		7443259828C5021A009D8085 /* Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7443259B28C5021A009D8085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7443259D28C5021A009D8085 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +73,6 @@
 				741741A428E5B864007601C0 /* AlarmViewController.swift */,
 				741741A628E5B879007601C0 /* StopwatchViewController.swift */,
 				741741A828E5BED7007601C0 /* TimerViewController.swift */,
-				741741AC28E74EEC007601C0 /* TimerViewController+extensions.swift */,
 				741741AA28E74DC1007601C0 /* UIViewController+extension.swift */,
 				744325A128C5021A009D8085 /* Main.storyboard */,
 				744325A428C5021B009D8085 /* Assets.xcassets */,
@@ -162,7 +159,6 @@
 				744325A028C5021A009D8085 /* WorldTimeViewController.swift in Sources */,
 				741741A928E5BED7007601C0 /* TimerViewController.swift in Sources */,
 				741741A328E5AB21007601C0 /* MainTabBarController.swift in Sources */,
-				741741AD28E74EEC007601C0 /* TimerViewController+extensions.swift in Sources */,
 				7443259C28C5021A009D8085 /* AppDelegate.swift in Sources */,
 				7443259E28C5021A009D8085 /* SceneDelegate.swift in Sources */,
 			);

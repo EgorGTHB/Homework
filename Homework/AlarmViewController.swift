@@ -215,24 +215,13 @@ final class AlarmViewController: UIViewController {
   }
   
   private func addSubviews() {
-    view.addSubview(editButton)
-    view.addSubview(addButton)
-    view.addSubview(alarmLabel)
-    view.addSubview(bedImageView)
-    view.addSubview(sleepLabel)
-    view.addSubview(wakeUpLabel)
-    view.addSubview(withoutAlarmLabel)
-    view.addSubview(settingButton)
-    view.addSubview(othersLabel)
-    view.addSubview(alarm10Label)
-    view.addSubview(alarm1Label)
-    view.addSubview(switch1)
-    view.addSubview(alarm1015Label)
-    view.addSubview(alarm2Label)
-    view.addSubview(switch2)
-    view.addSubview(alarm1800Label)
-    view.addSubview(alarm3Label)
-    view.addSubview(switch3)
+    [editButton, addButton, alarmLabel, bedImageView,
+     sleepLabel, wakeUpLabel, withoutAlarmLabel,
+     settingButton, othersLabel, alarm10Label, alarm1Label,
+     switch1, alarm1015Label, alarm2Label, switch2,
+     alarm1800Label, alarm3Label, switch3].forEach {
+      view.addSubview($0)
+    }
   }
  
   private func setupSelfView() {
