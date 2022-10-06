@@ -109,10 +109,9 @@ final class HomeViewController: UIViewController {
   }
   
   private func addSubviews() {
-    view.addSubview(textColorTextfield)
-    view.addSubview(numberOfLinesTextfield)
-    view.addSubview(label)
-    view.addSubview(slider)
+    [textColorTextfield, numberOfLinesTextfield, label, slider].forEach {
+      view.addSubview($0)
+    }
   }
   
   private func addTarget() {
