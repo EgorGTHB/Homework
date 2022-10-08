@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		7443259C28C5021A009D8085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259B28C5021A009D8085 /* AppDelegate.swift */; };
 		7443259E28C5021A009D8085 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259D28C5021A009D8085 /* SceneDelegate.swift */; };
-		744325A028C5021A009D8085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259F28C5021A009D8085 /* ViewController.swift */; };
+		744325A028C5021A009D8085 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259F28C5021A009D8085 /* RegisterViewController.swift */; };
 		744325A328C5021A009D8085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744325A128C5021A009D8085 /* Main.storyboard */; };
 		744325A528C5021B009D8085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744325A428C5021B009D8085 /* Assets.xcassets */; };
 		744325A828C5021B009D8085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744325A628C5021B009D8085 /* LaunchScreen.storyboard */; };
+		74C116F228F057E60037D71A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C116F128F057E60037D71A /* SignInViewController.swift */; };
+		74C116F428F06A660037D71A /* LoseWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C116F328F06A660037D71A /* LoseWeightViewController.swift */; };
+		74C116F628F08B9E0037D71A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C116F528F08B9E0037D71A /* SettingsViewController.swift */; };
+		74C116F828F11F380037D71A /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C116F728F11F380037D71A /* UIViewController+extension.swift */; };
+		74C116FA28F16B620037D71A /* звук.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74C116F928F16B620037D71A /* звук.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7443259828C5021A009D8085 /* Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7443259B28C5021A009D8085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7443259D28C5021A009D8085 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7443259F28C5021A009D8085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7443259F28C5021A009D8085 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		744325A228C5021A009D8085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		744325A428C5021B009D8085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		744325A728C5021B009D8085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		744325A928C5021B009D8085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74C116F128F057E60037D71A /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		74C116F328F06A660037D71A /* LoseWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoseWeightViewController.swift; sourceTree = "<group>"; };
+		74C116F528F08B9E0037D71A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		74C116F728F11F380037D71A /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
+		74C116F928F16B620037D71A /* звук.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "звук.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +68,16 @@
 			children = (
 				7443259B28C5021A009D8085 /* AppDelegate.swift */,
 				7443259D28C5021A009D8085 /* SceneDelegate.swift */,
-				7443259F28C5021A009D8085 /* ViewController.swift */,
+				7443259F28C5021A009D8085 /* RegisterViewController.swift */,
+				74C116F128F057E60037D71A /* SignInViewController.swift */,
+				74C116F328F06A660037D71A /* LoseWeightViewController.swift */,
+				74C116F528F08B9E0037D71A /* SettingsViewController.swift */,
+				74C116F728F11F380037D71A /* UIViewController+extension.swift */,
 				744325A128C5021A009D8085 /* Main.storyboard */,
 				744325A428C5021B009D8085 /* Assets.xcassets */,
 				744325A628C5021B009D8085 /* LaunchScreen.storyboard */,
 				744325A928C5021B009D8085 /* Info.plist */,
+				74C116F928F16B620037D71A /* звук.mp3 */,
 			);
 			path = Homework;
 			sourceTree = "<group>";
@@ -125,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74C116FA28F16B620037D71A /* звук.mp3 in Resources */,
 				744325A828C5021B009D8085 /* LaunchScreen.storyboard in Resources */,
 				744325A528C5021B009D8085 /* Assets.xcassets in Resources */,
 				744325A328C5021A009D8085 /* Main.storyboard in Resources */,
@@ -138,9 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				744325A028C5021A009D8085 /* ViewController.swift in Sources */,
+				74C116F428F06A660037D71A /* LoseWeightViewController.swift in Sources */,
+				744325A028C5021A009D8085 /* RegisterViewController.swift in Sources */,
+				74C116F828F11F380037D71A /* UIViewController+extension.swift in Sources */,
 				7443259C28C5021A009D8085 /* AppDelegate.swift in Sources */,
+				74C116F228F057E60037D71A /* SignInViewController.swift in Sources */,
 				7443259E28C5021A009D8085 /* SceneDelegate.swift in Sources */,
+				74C116F628F08B9E0037D71A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
