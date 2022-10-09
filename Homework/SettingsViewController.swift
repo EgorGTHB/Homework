@@ -134,6 +134,7 @@ final class SettingsViewController: UIViewController {
     volumeSlider.frame = CGRect(x: 20, y: 292, width: 374, height: 23)
     volumeSlider.value = 0.5
     volumeSlider.tintColor = .black
+    volumeSlider.isContinuous = false
   }
   
   private func setupVoiceGuidanceLabel() {
