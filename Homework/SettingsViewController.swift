@@ -221,11 +221,6 @@ final class SettingsViewController: UIViewController {
     exitButton.addTarget(self, action: #selector(toSignInViewController), for: .touchUpInside)
   }
   
-  @objc private func toSignInViewController() {
-    let signInViewController = SignInViewController()
-    self.navigationController?.pushViewController(signInViewController, animated: true)
-  }
-  
   private func setupPlayer() {
     do{
       guard let audioPath = Bundle.main.path(forResource: "звук", ofType: "mp3") else { return }
@@ -236,6 +231,12 @@ final class SettingsViewController: UIViewController {
     player.volume = 0.5
   }
   
+  // MARK: - Actions
+  @objc private func toSignInViewController() {
+    let signInViewController = SignInViewController()
+    self.navigationController?.pushViewController(signInViewController, animated: true)
+  }
+  
   @objc private func changeSliderVolume(sender: UISlider) {
     guard sender == volumeSlider else { return }
     player.play()
@@ -243,6 +244,7 @@ final class SettingsViewController: UIViewController {
   }
 }
 
+// MARK: - UIPickerViewDelegate
 extension SettingsViewController: UIPickerViewDelegate {
   
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -268,6 +270,7 @@ extension SettingsViewController: UIPickerViewDelegate {
   }
 }
 
+// MARK: - UIPickerViewDataSource
 extension SettingsViewController: UIPickerViewDataSource {
   
   func numberOfComponents(in pickerView: UIPickerView) -> Int {

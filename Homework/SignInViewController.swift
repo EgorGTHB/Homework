@@ -89,6 +89,7 @@ final class SignInViewController: UIViewController {
     signInButton.addTarget(self, action: #selector(toLoseWeightViewController), for: .touchUpInside)
   }
   
+  // MARK: - Actions
   @objc private func toRegisterInViewController() {
     let registerViewController = RegisterViewController()
     self.navigationController?.pushViewController(registerViewController, animated: true)
@@ -98,9 +99,9 @@ final class SignInViewController: UIViewController {
     let loseWeightViewController = LoseWeightViewController()
     self.navigationController?.pushViewController(loseWeightViewController, animated: true)
   }
-
 }
 
+// MARK: - UITextFieldDelegate
 extension SignInViewController: UITextFieldDelegate {
   
   public func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -15,6 +15,10 @@ final class RegisterViewController: UIViewController {
     setupView()
   }
   
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
   // MARK: - Visual Components
   private func setupNavigationController() {
     title = "Регистрация"
@@ -114,6 +118,7 @@ final class RegisterViewController: UIViewController {
     registerButton.addTarget(self, action: #selector(toLoseWeightViewController), for: .touchUpInside)
   }
   
+  // MARK: - Actions
   @objc private func toSignInViewController() {
     let signInViewController = SignInViewController()
     self.navigationController?.pushViewController(signInViewController, animated: true)
@@ -125,6 +130,7 @@ final class RegisterViewController: UIViewController {
   }
 }
 
+// MARK: - UITextFieldDelegate
 extension RegisterViewController: UITextFieldDelegate {
   
   public func textFieldShouldReturn(_ textField: UITextField) -> Bool {

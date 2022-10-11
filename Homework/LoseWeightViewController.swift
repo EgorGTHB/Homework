@@ -85,9 +85,10 @@ final class LoseWeightViewController: UIViewController {
     }
   }
   
-  @objc func goToSettings() {
+  // MARK: - Actions
+  @objc private func goToSettings() {
     let settingsViewController = SettingsViewController()
-    self.navigationController?.pushViewController(settingsViewController, animated: true)
+    navigationController?.pushViewController(settingsViewController, animated: true)
     let backItem = UIBarButtonItem()
     backItem.title = ""
     backItem.tintColor = .black
