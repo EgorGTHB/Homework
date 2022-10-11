@@ -122,6 +122,7 @@ final class HomeViewController: UIViewController {
     view.backgroundColor = .white
   }
   
+  // MARK: - Actions
   @objc private func addAlert() {
     alert(title: "Введите текст", message: "") { textLabel in
       self.label.text = textLabel 
@@ -134,6 +135,7 @@ final class HomeViewController: UIViewController {
   }
 }
 
+// MARK: - UIPickerViewDelegate
 extension HomeViewController: UIPickerViewDelegate {
   
   public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -148,6 +150,7 @@ extension HomeViewController: UIPickerViewDelegate {
   }
 }
 
+// MARK: - UIPickerViewDataSource
 extension HomeViewController: UIPickerViewDataSource {
   
   public func numberOfComponents(in pickerView: UIPickerView) -> Int {

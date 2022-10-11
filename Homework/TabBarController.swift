@@ -1,7 +1,7 @@
 import UIKit
 
 final class TabBarController: UITabBarController {
-  let navigationViewController = UINavigationController(rootViewController: HomeViewController())
+  private let navigationViewController = UINavigationController(rootViewController: HomeViewController())
   
   // MARK: - UITabBarController
   override func viewDidLoad() {
