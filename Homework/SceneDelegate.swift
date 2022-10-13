@@ -7,7 +7,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       guard let ws = scene as? UIWindowScene else { return }
       window = UIWindow(windowScene: ws)
       let navigationController = UINavigationController()
-      let viewController = ViewController()
+      let viewController = TimerViewController()
       navigationController.viewControllers = [viewController]
       window?.rootViewController = navigationController
       window?.makeKeyAndVisible()

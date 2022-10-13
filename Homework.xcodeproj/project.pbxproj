@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7443259C28C5021A009D8085 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259B28C5021A009D8085 /* AppDelegate.swift */; };
 		7443259E28C5021A009D8085 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259D28C5021A009D8085 /* SceneDelegate.swift */; };
-		744325A028C5021A009D8085 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259F28C5021A009D8085 /* ViewController.swift */; };
+		744325A028C5021A009D8085 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7443259F28C5021A009D8085 /* TimerViewController.swift */; };
 		744325A328C5021A009D8085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744325A128C5021A009D8085 /* Main.storyboard */; };
 		744325A528C5021B009D8085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744325A428C5021B009D8085 /* Assets.xcassets */; };
 		744325A828C5021B009D8085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744325A628C5021B009D8085 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		7443259828C5021A009D8085 /* Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7443259B28C5021A009D8085 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7443259D28C5021A009D8085 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7443259F28C5021A009D8085 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7443259F28C5021A009D8085 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		744325A228C5021A009D8085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		744325A428C5021B009D8085 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		744325A728C5021B009D8085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				7443259B28C5021A009D8085 /* AppDelegate.swift */,
 				7443259D28C5021A009D8085 /* SceneDelegate.swift */,
-				7443259F28C5021A009D8085 /* ViewController.swift */,
+				7443259F28C5021A009D8085 /* TimerViewController.swift */,
 				7499652A28F5F99B000010B2 /* UIViewController+extension.swift */,
 				744325A128C5021A009D8085 /* Main.storyboard */,
 				744325A428C5021B009D8085 /* Assets.xcassets */,
@@ -142,7 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7499652B28F5F99C000010B2 /* UIViewController+extension.swift in Sources */,
-				744325A028C5021A009D8085 /* ViewController.swift in Sources */,
+				744325A028C5021A009D8085 /* TimerViewController.swift in Sources */,
 				7443259C28C5021A009D8085 /* AppDelegate.swift in Sources */,
 				7443259E28C5021A009D8085 /* SceneDelegate.swift in Sources */,
 			);
