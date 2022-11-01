@@ -1,11 +1,12 @@
 import UIKit
 
 final class ShopTabBarController: UITabBarController {
+  // MARK: - Private Properties
   private let buyViewController = UINavigationController(rootViewController: BuyViewController())
   private let forYouViewController = UINavigationController(rootViewController: ForYouViewController())
-  private let navigationViewController3 = UINavigationController(rootViewController: SearchViewController())
+  private let navigationViewController = UINavigationController(rootViewController: SearchViewController())
   private let bagViewController = UINavigationController(rootViewController: BagViewController())
- 
+  
   // MARK: - UITabBarController
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,18 +20,21 @@ final class ShopTabBarController: UITabBarController {
   }
   
   private func generateTabBar() {
-    viewControllers = [generateVC(viewController: buyViewController, title: "Купить", image: UIImage(systemName: "laptopcomputer.and.iphone")), generateVC(viewController: forYouViewController, title: "Для вас", image: UIImage(systemName: "person.circle")), generateVC(viewController: navigationViewController3, title: "Поиск", image: UIImage(systemName: "magnifyingglass")), generateVC(viewController: bagViewController, title: "Корзина", image: UIImage(systemName: "bag"))]
+    viewControllers = [generateVC(viewController: buyViewController, title: "Купить", image: UIImage(systemName: "laptopcomputer.and.iphone"), tabBarTintColor: .blue, tabBarUnselectedItemTintColor: .gray),
+                       generateVC(viewController: forYouViewController, title: "Для вас", image: UIImage(systemName: "person.circle"), tabBarTintColor: .blue, tabBarUnselectedItemTintColor: .gray),
+                       generateVC(viewController: navigationViewController, title: "Поиск", image: UIImage(systemName: "magnifyingglass"),tabBarTintColor: .blue, tabBarUnselectedItemTintColor: .gray),
+                       generateVC(viewController: bagViewController, title: "Корзина", image: UIImage(systemName: "bag"),tabBarTintColor: .blue, tabBarUnselectedItemTintColor: .gray)]
   }
   
   private func setupSelfView() {
-    tabBar.tintColor = .blue
-    tabBar.unselectedItemTintColor = .gray
-    tabBar.backgroundColor = UIColor(red: 21/255, green: 21/255, blue: 23/255, alpha: 1)
+    selectedViewController = forYouViewController
   }
   
-  private func generateVC(viewController: UIViewController, title: String, image: UIImage?) -> UIViewController {
+  private func generateVC(viewController: UIViewController, title: String, image: UIImage?, tabBarTintColor: UIColor,  tabBarUnselectedItemTintColor: UIColor) -> UIViewController {
     viewController.tabBarItem.title = title
     viewController.tabBarItem.image = image
+    tabBar.tintColor = tabBarTintColor
+    tabBar.unselectedItemTintColor = tabBarUnselectedItemTintColor
     return viewController
   }
 }

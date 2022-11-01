@@ -281,25 +281,21 @@ final class SearchViewController: UIViewController {
     drawLine(start: point7, toPoint: point8, ofColor: .gray, inView: view, shapeWidth: 1)
   }
   
-  private func goToCardProduct(descriptionProduct: String, priceProduct: String, imageProduct1: String, imageProduct2: String, imageProduct3: String) {
+  private func goToCardProduct(urlString: String) {
     let cardProductViewController = CardProductViewController()
-    cardProductViewController.descriptionProduct = descriptionProduct
-    cardProductViewController.priceProduct = priceProduct
-    cardProductViewController.imageProduct1 = imageProduct1
-    cardProductViewController.imageProduct2 = imageProduct2
-    cardProductViewController.imageProduct3 = imageProduct3
-    navigationController?.pushViewController(cardProductViewController, animated: true)
+    cardProductViewController.urlString = urlString
+    navigationController?.present(cardProductViewController, animated: true)
   }
   
   // MARK: - Actions
   @objc private func tapFunction(sender: UITapGestureRecognizer) {
     switch sender.view {
     case incaseFlateLabel:
-      goToCardProduct(descriptionProduct: "Чехол Incase Flat для Macbook Pro 16 дюймов", priceProduct: "3 990.00 руб.", imageProduct1: "case1", imageProduct2: "case2", imageProduct3: "case3")
+      goToCardProduct(urlString: "https://www.apple.com/shop/product/HQ2A2ZM/A/incase-compact-sleeve-in-flight-nylon-for-16-macbook-pro?fnode=96a2cb99dca8754ec94e3556faeda3182b3da82fc8a7bfa456bbb73c04d52935d755077f01e40f70f7fec64b6734081a3881e67fa72b04d81376169cabe011a643c0525eeefab0b788a850fb3e32008b907c7f2b2fa3f384c0c12076b3aa3976")
     case strapLabel:
-      goToCardProduct(descriptionProduct: "Спортивный ремешок Black Unity", priceProduct: "1 990.00 руб.", imageProduct1: "strap1", imageProduct2: "strap2", imageProduct3: "strap3")
+      goToCardProduct(urlString: "https://www.apple.com/shop/product/MJ4V3AM/A/40mm-black-unity-sport-band-regular?fnode=ef8ee999c3e48fffcbecf27758a3a0d941df0da6b764ecad8325cad09d3c0831a6cc9aa0be93b3baa51c1bf1979ecb5441135ae2de57e2b1ad92ce79c0a91d06575200e0e6d64da5b0eeceaf7c8001d3")
     case leatherCaseLabel:
-      goToCardProduct(descriptionProduct: "Кожаный чехол для Macbook Pro 16 дюймов, золотой", priceProduct: "7 990.00 руб.", imageProduct1: "leather1", imageProduct2: "leather2", imageProduct3: "leather3")
+      goToCardProduct(urlString: "https://www.apple.com/shop/product/HPZT2ZM/A/von-holzhausen-macbook-14-portfolio?fnode=d107f86da52c8aad7b926feb40b61bdddd8e22f131522bb76528445796b517d74c0cb936a4a7786c73912f545d6109772a9db17f73db8c557b1fbfd226e5552a848068c2848bd01b0e2963c77559081a1724ded8338baa1c9461a65a105e10a57229ec2b3a81d9e0f1fe4d159557bbf9")
     default:
       return
     }

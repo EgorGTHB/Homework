@@ -16,4 +16,34 @@ extension UIViewController {
   @objc func endEditing() {
     view.endEditing(true)
   }
+  
+  func isActivityIndicator(isAnimated: Bool, indicator: UIActivityIndicatorView) {
+    if isAnimated {
+      indicator.startAnimating()
+    } else {
+      indicator.stopAnimating()
+    }
+  }
+  
+  func setupShadow(_ view: UIView) {
+    view.layer.shadowColor = UIColor.black.cgColor
+    view.layer.shadowOpacity = 0.4
+    view.layer.shadowOffset = .zero
+    view.layer.shadowRadius = 10
+    view.layer.shadowPath = UIBezierPath(rect: view.bounds).cgPath
+    view.layer.shouldRasterize = true
+  }
+  
+   func saveImageInUserDefaults(img: UIImage, key: String) {
+    UserDefaults.standard.set(img.pngData(), forKey: key)
+  }
+  
+   func getImageFromUserDefaults(key: String) -> UIImage? {
+    let imageData = UserDefaults.standard.object(forKey: key) as? Data
+    var image: UIImage? 
+    if let imageData = imageData {
+      image = UIImage(data: imageData)
+    }
+    return image
+  }
 }

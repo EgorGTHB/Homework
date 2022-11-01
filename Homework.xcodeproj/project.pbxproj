@@ -14,10 +14,14 @@
 		744325A528C5021B009D8085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744325A428C5021B009D8085 /* Assets.xcassets */; };
 		744325A828C5021B009D8085 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 744325A628C5021B009D8085 /* LaunchScreen.storyboard */; };
 		7484603828F91EB20013C936 /* BuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484603728F91EB20013C936 /* BuyViewController.swift */; };
-		7484603A28F91EC50013C936 /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484603928F91EC50013C936 /* ForYouViewController.swift */; };
 		7484603C28F91F810013C936 /* BagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484603B28F91F810013C936 /* BagViewController.swift */; };
 		7484603E28F94FA90013C936 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484603D28F94FA90013C936 /* UIViewController+extension.swift */; };
 		7484604028F9D96E0013C936 /* CardProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7484603F28F9D96E0013C936 /* CardProductViewController.swift */; };
+		749CE9642905643B0066A3BC /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749CE9632905643B0066A3BC /* LoadingViewController.swift */; };
+		74C49C4B29017727007A4EAE /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C49C4A29017727007A4EAE /* ForYouViewController.swift */; };
+		74C5ACC92909F7640030A3EE /* ShopHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5ACC82909F7640030A3EE /* ShopHelper.swift */; };
+		74C5ACCB2909F7B40030A3EE /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5ACCA2909F7B40030A3EE /* OnboardingViewController.swift */; };
+		74C5ACCD2909F8DD0030A3EE /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5ACCC2909F8DD0030A3EE /* OnboardingPageViewController.swift */; };
 		74C8F96928F85343006E664A /* ShopTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C8F96828F85343006E664A /* ShopTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,10 +35,14 @@
 		744325A728C5021B009D8085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		744325A928C5021B009D8085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7484603728F91EB20013C936 /* BuyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyViewController.swift; sourceTree = "<group>"; };
-		7484603928F91EC50013C936 /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		7484603B28F91F810013C936 /* BagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagViewController.swift; sourceTree = "<group>"; };
 		7484603D28F94FA90013C936 /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		7484603F28F9D96E0013C936 /* CardProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProductViewController.swift; sourceTree = "<group>"; };
+		749CE9632905643B0066A3BC /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		74C49C4A29017727007A4EAE /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
+		74C5ACC82909F7640030A3EE /* ShopHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHelper.swift; sourceTree = "<group>"; };
+		74C5ACCA2909F7B40030A3EE /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		74C5ACCC2909F8DD0030A3EE /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		74C8F96828F85343006E664A /* ShopTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,9 +78,10 @@
 			children = (
 				7443259B28C5021A009D8085 /* AppDelegate.swift */,
 				7443259D28C5021A009D8085 /* SceneDelegate.swift */,
+				749CE9632905643B0066A3BC /* LoadingViewController.swift */,
 				74C8F96828F85343006E664A /* ShopTabBarController.swift */,
 				7484603728F91EB20013C936 /* BuyViewController.swift */,
-				7484603928F91EC50013C936 /* ForYouViewController.swift */,
+				74C49C4A29017727007A4EAE /* ForYouViewController.swift */,
 				7443259F28C5021A009D8085 /* SearchViewController.swift */,
 				7484603F28F9D96E0013C936 /* CardProductViewController.swift */,
 				7484603B28F91F810013C936 /* BagViewController.swift */,
@@ -81,8 +90,19 @@
 				744325A428C5021B009D8085 /* Assets.xcassets */,
 				744325A628C5021B009D8085 /* LaunchScreen.storyboard */,
 				744325A928C5021B009D8085 /* Info.plist */,
+				74C5ACC72909F6830030A3EE /* Onboarding */,
 			);
 			path = Homework;
+			sourceTree = "<group>";
+		};
+		74C5ACC72909F6830030A3EE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				74C5ACC82909F7640030A3EE /* ShopHelper.swift */,
+				74C5ACCA2909F7B40030A3EE /* OnboardingViewController.swift */,
+				74C5ACCC2909F8DD0030A3EE /* OnboardingPageViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,15 +176,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74C5ACCD2909F8DD0030A3EE /* OnboardingPageViewController.swift in Sources */,
 				7484603E28F94FA90013C936 /* UIViewController+extension.swift in Sources */,
 				7484603C28F91F810013C936 /* BagViewController.swift in Sources */,
 				7484604028F9D96E0013C936 /* CardProductViewController.swift in Sources */,
 				744325A028C5021A009D8085 /* SearchViewController.swift in Sources */,
 				7484603828F91EB20013C936 /* BuyViewController.swift in Sources */,
-				7484603A28F91EC50013C936 /* ForYouViewController.swift in Sources */,
 				7443259C28C5021A009D8085 /* AppDelegate.swift in Sources */,
 				7443259E28C5021A009D8085 /* SceneDelegate.swift in Sources */,
+				74C5ACCB2909F7B40030A3EE /* OnboardingViewController.swift in Sources */,
+				74C5ACC92909F7640030A3EE /* ShopHelper.swift in Sources */,
+				749CE9642905643B0066A3BC /* LoadingViewController.swift in Sources */,
 				74C8F96928F85343006E664A /* ShopTabBarController.swift in Sources */,
+				74C49C4B29017727007A4EAE /* ForYouViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
