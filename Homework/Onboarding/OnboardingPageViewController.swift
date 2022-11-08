@@ -7,9 +7,9 @@ final class OnboardingPageViewController: UIPageViewController {
   private let nextButton = UIButton(type: .system)
   private let getStartedButton = UIButton(type: .system)
   
-  private let firstImage = UIImage(named: "1")
-  private let secondImage = UIImage(named: "2")
-  private let thirdImage = UIImage(named: "3")
+  private let firstImage = "1"
+  private let secondImage = "2"
+  private let thirdImage = "3"
   private var arrayShopHelpers = [ShopHelper]()
   private var arrayOnboardingViewController = [OnboardingViewController]()
   private var appearancePageControl = UIPageControl.appearance(whenContainedInInstancesOf: [OnboardingPageViewController.self])
@@ -26,7 +26,6 @@ final class OnboardingPageViewController: UIPageViewController {
                 options: [UIPageViewController.OptionsKey : Any]?) {
     super.init(transitionStyle: .scroll, navigationOrientation: navigationOrientation, options: nil)
     dataSource = self
-    delegate = self
     view.backgroundColor = .white
     setViewControllers([arrayOnboardingViewController[0]], direction: .forward, animated: true, completion: nil)
   }
@@ -78,12 +77,9 @@ final class OnboardingPageViewController: UIPageViewController {
   }
   
   private func setupCarsHelper() {
-    guard let first = firstImage else { return }
-    guard let second = secondImage else { return }
-    guard let third = thirdImage else { return }
-    let firstWindow = ShopHelper(image: first, text: "Покупайте в приложении")
-    let secondWindow = ShopHelper(image: second, text: "В приложении дешевле")
-    let thirdWindow = ShopHelper(image: third, text: "Тысячи товаров уже здесь")
+    let firstWindow = ShopHelper(image: firstImage, text: "Покупайте в приложении")
+    let secondWindow = ShopHelper(image: secondImage, text: "В приложении дешевле")
+    let thirdWindow = ShopHelper(image: thirdImage, text: "Тысячи товаров уже здесь")
     arrayShopHelpers.append(firstWindow)
     arrayShopHelpers.append(secondWindow)
     arrayShopHelpers.append(thirdWindow)
@@ -138,7 +134,6 @@ final class OnboardingPageViewController: UIPageViewController {
     guard let nextViewController = dataSource?.pageViewController(self, viewControllerAfter: currentViewController) else { return }
     setViewControllers([nextViewController], direction: .forward, animated: true)
     isLast(viewController: nextViewController as! OnboardingViewController)
-    
   }
   
   @objc private func getStartedButtonAction() {
@@ -147,7 +142,7 @@ final class OnboardingPageViewController: UIPageViewController {
 }
 
 // MARK: - UIPageViewControllerDataSource, UIPageViewControllerDelegate
-extension OnboardingPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+extension OnboardingPageViewController: UIPageViewControllerDataSource {
   
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
     guard let viewController = viewController as? OnboardingViewController else { return nil }
@@ -179,3 +174,4 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource, UIPageVi
     return current
   }
 }
+ 

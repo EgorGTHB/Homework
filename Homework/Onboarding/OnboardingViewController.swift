@@ -13,7 +13,7 @@ final class OnboardingViewController: UIViewController {
   
   init(withShopModel: ShopHelper) {
     super.init(nibName: nil, bundle: nil)
-    shopImage.image = withShopModel.image
+    shopImage.image = UIImage(named: withShopModel.image)
     shopLabel.text = withShopModel.text
     edgesForExtendedLayout = []
   }

@@ -1,7 +1,7 @@
 import UIKit
 
 struct ShopHelper {
-  var image = UIImage()
+  var image = String()
   var text = String()
 }
 
