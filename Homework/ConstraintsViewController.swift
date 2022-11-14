@@ -19,25 +19,21 @@ final class ConstraintsViewController: UIViewController {
   }
   
   private func setupBlackRectangle() {
-    blackRectangle.translatesAutoresizingMaskIntoConstraints = false
     blackRectangle.frame = CGRect(x: 0, y: 0, width: 241, height: 700)
     blackRectangle.backgroundColor = .black
   }
   
   private func setupRedSquare() {
-    redSquare.translatesAutoresizingMaskIntoConstraints = false
     redSquare.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
     redSquare.backgroundColor = .red
   }
   
   private func setupYellowSquare() {
-    yellowSquare.translatesAutoresizingMaskIntoConstraints = false
     yellowSquare.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
     yellowSquare.backgroundColor = .yellow
   }
   
   private func setupGreenSquare() {
-    greenSquare.translatesAutoresizingMaskIntoConstraints = false
     greenSquare.frame = CGRect(x: 0, y: 0, width: 10, height: 10)
     greenSquare.backgroundColor = .green
   }
@@ -197,6 +193,7 @@ final class ConstraintsViewController: UIViewController {
   private func addSubviews() {
     [blackRectangle, redSquare, yellowSquare, greenSquare].forEach {
       view.addSubview($0)
+      $0.translatesAutoresizingMaskIntoConstraints = false
     }
   }
   
