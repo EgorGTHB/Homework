@@ -110,8 +110,7 @@ extension HomeViewController: UITableViewDelegate {
       return 100
     } else if indexPath.row == 2 {
       return 390
-    }
-    else {
+    } else {
       return 600
     }
   }

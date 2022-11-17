@@ -1,4 +1,3 @@
 import UIKit
 
-final class LikeViewController: UIViewController {
-}
+final class LikeViewController: UIViewController {}

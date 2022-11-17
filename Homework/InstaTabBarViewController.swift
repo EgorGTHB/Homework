@@ -12,8 +12,6 @@ final class InstaTabBarViewController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
-    
-   
   }
   
   // MARK: - Private Methods
@@ -37,7 +35,6 @@ final class InstaTabBarViewController: UITabBarController {
     tabBar.addSubview(lineView)
     tabBar.barTintColor = .black
     tabBar.isTranslucent = true
-
   }
   
   private func generateVC(viewController: UIViewController, image: UIImage?, tabBarTintColor: UIColor,  tabBarUnselectedItemTintColor: UIColor) -> UIViewController {

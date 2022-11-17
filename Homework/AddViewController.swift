@@ -1,4 +1,3 @@
 import UIKit
 
-final class AddViewController: UIViewController {
-}
+final class AddViewController: UIViewController {}

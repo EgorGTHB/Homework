@@ -1,26 +1,26 @@
 import UIKit
 
-class RecommendCell: UITableViewCell {
+final class RecommendCell: UITableViewCell {
   // MARK: - Private Properties
   private let recommendScrollView = UIScrollView()
   private let helpView = UIView()
   private let recommendForToYouLabel = UILabel()
-  private let recommendView1 = UIView()
-  private let photo1 = UIImageView()
-  private let nickNameLabel1 = UILabel()
+  private let recommendViewOne = UIView()
+  private let photoOne = UIImageView()
+  private let nickNameLabelOne = UILabel()
   private let recommendedToYouLabel1 = UILabel()
-  private let subscribeButton1 = UIButton()
-  private let recommendView2 = UIView()
-  private let photo2 = UIImageView()
-  private let nickNameLabel2 = UILabel()
-  private let recommendedToYouLabel2 = UILabel()
-  private let subscribeButton2 = UIButton()
-  private let recommendView3 = UIView()
-  private let photo3 = UIImageView()
-  private let nickNameLabel3 = UILabel()
-  private let recommendedToYouLabel3 = UILabel()
-  private let subscribeButton3 = UIButton()
-  private let stackView1 = UIStackView()
+  private let subscribeButtonOne = UIButton()
+  private let recommendViewTwo = UIView()
+  private let photoTwo = UIImageView()
+  private let nickNameLabelTwo = UILabel()
+  private let recommendedToYouLabelTwo = UILabel()
+  private let subscribeButtonTwo = UIButton()
+  private let recommendViewThree = UIView()
+  private let photoThree = UIImageView()
+  private let nickNameLabelThree = UILabel()
+  private let recommendedToYouLabelThree = UILabel()
+  private let subscribeButtonThree = UIButton()
+  private let stackViewOne = UIStackView()
   
   // MARK: - UITableViewCell
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -28,6 +28,7 @@ class RecommendCell: UITableViewCell {
     setupCell()
   }
   
+  @available(*, unavailable)
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -44,106 +45,106 @@ class RecommendCell: UITableViewCell {
     recommendForToYouLabel.font = .systemFont(ofSize: 17, weight: .bold)
   }
   
-  private func setupRecommendView1() {
-    recommendView1.backgroundColor = .black
-    recommendView1.layer.cornerRadius = 17
-    recommendView1.layer.masksToBounds = true
+  private func setupRecommendViewOne() {
+    recommendViewOne.backgroundColor = .black
+    recommendViewOne.layer.cornerRadius = 17
+    recommendViewOne.layer.masksToBounds = true
   }
   
-  private func setupPhoto1() {
-    photo1.image = UIImage(named: "avatar")
-    photo1.backgroundColor = .systemPink
-    photo1.layer.cornerRadius = 100
-    photo1.layer.masksToBounds = true
+  private func setupPhotoOne() {
+    photoOne.image = UIImage(named: "avatar")
+    photoOne.backgroundColor = .systemPink
+    photoOne.layer.cornerRadius = 100
+    photoOne.layer.masksToBounds = true
   }
   
-  private func setupNickNameLabel1() {
-    nickNameLabel1.text = "NickName1"
-    nickNameLabel1.textColor = .white
-    nickNameLabel1.font = .systemFont(ofSize: 17, weight: .bold)
-    nickNameLabel1.textAlignment = .center
+  private func setupNickNameLabelOne() {
+    nickNameLabelOne.text = "NickName1"
+    nickNameLabelOne.textColor = .white
+    nickNameLabelOne.font = .systemFont(ofSize: 17, weight: .bold)
+    nickNameLabelOne.textAlignment = .center
   }
   
-  private func setupRecommendedToYouLabel1() {
+  private func setupRecommendedToYouLabelOne() {
     recommendedToYouLabel1.text = "Рекомендации для вас"
     recommendedToYouLabel1.textColor = .gray
     recommendedToYouLabel1.font = .systemFont(ofSize: 15, weight: .regular)
     recommendedToYouLabel1.textAlignment = .center
   }
   
-  private func setupSubscribeButton1() {
-    subscribeButton1.setTitle("Подписаться", for: .normal)
-    subscribeButton1.backgroundColor = .systemBlue
-    subscribeButton1.setTitleColor(.white, for: .normal)
-    subscribeButton1.layer.cornerRadius = 5
+  private func setupSubscribeButtonOne() {
+    subscribeButtonOne.setTitle("Подписаться", for: .normal)
+    subscribeButtonOne.backgroundColor = .systemBlue
+    subscribeButtonOne.setTitleColor(.white, for: .normal)
+    subscribeButtonOne.layer.cornerRadius = 5
   }
   
-  private func setupRecommendView2() {
-    recommendView2.backgroundColor = .black
-    recommendView2.layer.cornerRadius = 17
-    recommendView2.layer.masksToBounds = true
+  private func setupRecommendViewTwo() {
+    recommendViewTwo.backgroundColor = .black
+    recommendViewTwo.layer.cornerRadius = 17
+    recommendViewTwo.layer.masksToBounds = true
   }
   
-  private func setupPhoto2() {
-    photo2.image = UIImage(named: "avatar")
-    photo2.backgroundColor = .systemPink
-    photo2.layer.cornerRadius = 100
-    photo2.layer.masksToBounds = true
+  private func setupPhotoTwo() {
+    photoTwo.image = UIImage(named: "avatar")
+    photoTwo.backgroundColor = .systemPink
+    photoTwo.layer.cornerRadius = 100
+    photoTwo.layer.masksToBounds = true
   }
   
-  private func setupNickNameLabel2() {
-    nickNameLabel2.text = "NickName2"
-    nickNameLabel2.textColor = .white
-    nickNameLabel2.font = .systemFont(ofSize: 17, weight: .bold)
-    nickNameLabel2.textAlignment = .center
+  private func setupNickNameLabelTwo() {
+    nickNameLabelTwo.text = "NickName2"
+    nickNameLabelTwo.textColor = .white
+    nickNameLabelTwo.font = .systemFont(ofSize: 17, weight: .bold)
+    nickNameLabelTwo.textAlignment = .center
   }
   
-  private func setupRecommendedToYouLabel2() {
-    recommendedToYouLabel2.text = "Рекомендации для вас"
-    recommendedToYouLabel2.textColor = .gray
-    recommendedToYouLabel2.font = .systemFont(ofSize: 15, weight: .regular)
-    recommendedToYouLabel2.textAlignment = .center
+  private func setupRecommendedToYouLabelTwo() {
+    recommendedToYouLabelTwo.text = "Рекомендации для вас"
+    recommendedToYouLabelTwo.textColor = .gray
+    recommendedToYouLabelTwo.font = .systemFont(ofSize: 15, weight: .regular)
+    recommendedToYouLabelTwo.textAlignment = .center
   }
   
-  private func setupSubscribeButton2() {
-    subscribeButton2.setTitle("Подписаться", for: .normal)
-    subscribeButton2.backgroundColor = .systemBlue
-    subscribeButton2.setTitleColor(.white, for: .normal)
-    subscribeButton2.layer.cornerRadius = 5
+  private func setupSubscribeButtonTwo() {
+    subscribeButtonTwo.setTitle("Подписаться", for: .normal)
+    subscribeButtonTwo.backgroundColor = .systemBlue
+    subscribeButtonTwo.setTitleColor(.white, for: .normal)
+    subscribeButtonTwo.layer.cornerRadius = 5
   }
   
-  private func setupRecommendView3() {
-    recommendView3.backgroundColor = .black
-    recommendView3.layer.cornerRadius = 17
-    recommendView3.layer.masksToBounds = true
+  private func setupRecommendViewThree() {
+    recommendViewThree.backgroundColor = .black
+    recommendViewThree.layer.cornerRadius = 17
+    recommendViewThree.layer.masksToBounds = true
   }
   
-  private func setupPhoto3() {
-    photo3.image = UIImage(named: "avatar")
-    photo3.backgroundColor = .systemPink
-    photo3.layer.cornerRadius = 100
-    photo3.layer.masksToBounds = true
+  private func setupPhotoThree() {
+    photoThree.image = UIImage(named: "avatar")
+    photoThree.backgroundColor = .systemPink
+    photoThree.layer.cornerRadius = 100
+    photoThree.layer.masksToBounds = true
   }
   
-  private func setupNickNameLabel3() {
-    nickNameLabel3.text = "NickName3"
-    nickNameLabel3.textColor = .white
-    nickNameLabel3.font = .systemFont(ofSize: 17, weight: .bold)
-    nickNameLabel3.textAlignment = .center
+  private func setupNickNameLabelThree() {
+    nickNameLabelThree.text = "NickName3"
+    nickNameLabelThree.textColor = .white
+    nickNameLabelThree.font = .systemFont(ofSize: 17, weight: .bold)
+    nickNameLabelThree.textAlignment = .center
   }
   
-  private func setupRecommendedToYouLabel3() {
-    recommendedToYouLabel3.text = "Рекомендации для вас"
-    recommendedToYouLabel3.textColor = .gray
-    recommendedToYouLabel3.font = .systemFont(ofSize: 15, weight: .regular)
-    recommendedToYouLabel3.textAlignment = .center
+  private func setupRecommendedToYouLabelThree() {
+    recommendedToYouLabelThree.text = "Рекомендации для вас"
+    recommendedToYouLabelThree.textColor = .gray
+    recommendedToYouLabelThree.font = .systemFont(ofSize: 15, weight: .regular)
+    recommendedToYouLabelThree.textAlignment = .center
   }
   
-  private func setupSubscribeButton3() {
-    subscribeButton3.setTitle("Подписаться", for: .normal)
-    subscribeButton3.backgroundColor = .systemBlue
-    subscribeButton3.setTitleColor(.white, for: .normal)
-    subscribeButton3.layer.cornerRadius = 5
+  private func setupSubscribeButtonThree() {
+    subscribeButtonThree.setTitle("Подписаться", for: .normal)
+    subscribeButtonThree.backgroundColor = .systemBlue
+    subscribeButtonThree.setTitleColor(.white, for: .normal)
+    subscribeButtonThree.layer.cornerRadius = 5
   }
   
   private func setupRecommendScrollView() {
@@ -158,48 +159,48 @@ class RecommendCell: UITableViewCell {
   private func setupCell() {
     setupAppearance()
     setupRecommendForYouLabel()
-    setupRecommendView1()
-    setupPhoto1()
-    setupNickNameLabel1()
-    setupRecommendedToYouLabel1()
-    setupSubscribeButton1()
-    setupRecommendView2()
-    setupPhoto2()
-    setupNickNameLabel2()
-    setupRecommendedToYouLabel2()
-    setupSubscribeButton2()
-    setupRecommendView3()
-    setupPhoto3()
-    setupNickNameLabel3()
-    setupRecommendedToYouLabel3()
-    setupSubscribeButton3()
+    setupRecommendViewOne()
+    setupPhotoOne()
+    setupNickNameLabelOne()
+    setupRecommendedToYouLabelOne()
+    setupSubscribeButtonOne()
+    setupRecommendViewTwo()
+    setupPhotoTwo()
+    setupNickNameLabelTwo()
+    setupRecommendedToYouLabelTwo()
+    setupSubscribeButtonTwo()
+    setupRecommendViewThree()
+    setupPhotoThree()
+    setupNickNameLabelThree()
+    setupRecommendedToYouLabelThree()
+    setupSubscribeButtonThree()
     setupRecommendScrollView()
     setupHelpView()
     addSubviews()
     addSubviewsToPhotoScrollView()
     addSubviewsToHelpView()
-    addSubviewsToRecommendView1()
-    addSubviewsToRecommendView2()
-    addSubviewsToRecommendView3()
+    addSubviewsToRecommendViewOne()
+    addSubviewsToRecommendViewTwo()
+    addSubviewsToRecommendViewThree()
     setupRecommendForYouLabelConstraint()
     setupRecommendView1Constraint()
     setupPhoto1Constraint()
-    setupNickNameLabel1Constraint()
+    setupNickNameLabelOneConstraint()
     setupRecommendedToYouLabel1Constraint()
-    setupSubscribeButton1Constraint()
-    setupRecommendView2Constraint()
-    setupPhoto2Constraint()
-    setupNickNameLabel2Constraint()
-    setupRecommendedToYouLabel2Constraint()
-    setupSubscribeButton2Constraint()
-    setupRecommendView3Constraint()
-    setupPhoto3Constraint()
-    setupNickNameLabel3Constraint()
-    setupRecommendedToYouLabel3Constraint()
-    setupSubscribeButton3Constraint()
+    setupSubscribeButtonOneConstraint()
+    setupRecommendViewTwoConstraint()
+    setupPhotoTwoConstraint()
+    setupNickNameLabelTwoConstraint()
+    setupRecommendedToYouLabelTwoConstraint()
+    setupSubscribeButtonTwoConstraint()
+    setupRecommendViewThreeConstraint()
+    setupPhotoThreeConstraint()
+    setupNickNameLabelThreeConstraint()
+    setupRecommendedToYouLabelThreeConstraint()
+    setupSubscribeButtonThreeConstraint()
     setupRecommendScrollViewConstraint()
-    setupStackView1()
-    setupStackView1Constraints()
+    setupStackViewOne()
+    setupStackViewOneConstraints()
   }
   
   private func addSubviews() {
@@ -217,31 +218,31 @@ class RecommendCell: UITableViewCell {
   }
   
   private func addSubviewsToHelpView() {
-    [stackView1].forEach {
+    [stackViewOne].forEach {
       helpView.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
   }
   
-  private func addSubviewsToRecommendView1() {
-    [photo1, nickNameLabel1, recommendedToYouLabel1, subscribeButton1].forEach {
-      recommendView1.addSubview($0)
+  private func addSubviewsToRecommendViewOne() {
+    [photoOne, nickNameLabelOne, recommendedToYouLabel1, subscribeButtonOne].forEach {
+      recommendViewOne.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
   }
   
-  private func addSubviewsToRecommendView2() {
-    [photo2, nickNameLabel2, recommendedToYouLabel2, subscribeButton2
+  private func addSubviewsToRecommendViewTwo() {
+    [photoTwo, nickNameLabelTwo, recommendedToYouLabelTwo, subscribeButtonTwo
     ].forEach {
-      recommendView2.addSubview($0)
+      recommendViewTwo.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
   }
   
-  private func addSubviewsToRecommendView3() {
-    [photo3, nickNameLabel3, recommendedToYouLabel3, subscribeButton3
+  private func addSubviewsToRecommendViewThree() {
+    [photoThree, nickNameLabelThree, recommendedToYouLabelThree, subscribeButtonThree
     ].forEach {
-      recommendView3.addSubview($0)
+      recommendViewThree.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
   }
@@ -258,130 +259,130 @@ class RecommendCell: UITableViewCell {
   
   private func setupRecommendView1Constraint() {
     NSLayoutConstraint.activate([
-      recommendView1.heightAnchor.constraint(equalToConstant: 320),
-      recommendView1.widthAnchor.constraint(equalToConstant: 240),
+      recommendViewOne.heightAnchor.constraint(equalToConstant: 320),
+      recommendViewOne.widthAnchor.constraint(equalToConstant: 240),
     ])
   }
   
   private func setupPhoto1Constraint() {
     NSLayoutConstraint.activate([
-      photo1.topAnchor.constraint(equalTo: recommendView1.topAnchor, constant: 20),
-      photo1.centerXAnchor.constraint(equalTo: recommendView1.centerXAnchor),
-      photo1.widthAnchor.constraint(equalToConstant: 190),
-      photo1.heightAnchor.constraint(equalToConstant: 190)
+      photoOne.topAnchor.constraint(equalTo: recommendViewOne.topAnchor, constant: 20),
+      photoOne.centerXAnchor.constraint(equalTo: recommendViewOne.centerXAnchor),
+      photoOne.widthAnchor.constraint(equalToConstant: 190),
+      photoOne.heightAnchor.constraint(equalToConstant: 190)
     ])
   }
   
-  private func setupNickNameLabel1Constraint() {
+  private func setupNickNameLabelOneConstraint() {
     NSLayoutConstraint.activate([
-      nickNameLabel1.topAnchor.constraint(equalTo: photo1.bottomAnchor, constant: 10),
-      nickNameLabel1.centerXAnchor.constraint(equalTo: recommendView1.centerXAnchor),
-      nickNameLabel1.widthAnchor.constraint(equalToConstant: 100),
-      nickNameLabel1.heightAnchor.constraint(equalToConstant: 20)
+      nickNameLabelOne.topAnchor.constraint(equalTo: photoOne.bottomAnchor, constant: 10),
+      nickNameLabelOne.centerXAnchor.constraint(equalTo: recommendViewOne.centerXAnchor),
+      nickNameLabelOne.widthAnchor.constraint(equalToConstant: 100),
+      nickNameLabelOne.heightAnchor.constraint(equalToConstant: 20)
     ])
   }
   
   private func setupRecommendedToYouLabel1Constraint() {
     NSLayoutConstraint.activate([
-      recommendedToYouLabel1.topAnchor.constraint(equalTo: nickNameLabel1.bottomAnchor, constant: 0),
-      recommendedToYouLabel1.centerXAnchor.constraint(equalTo: nickNameLabel1.centerXAnchor),
+      recommendedToYouLabel1.topAnchor.constraint(equalTo: nickNameLabelOne.bottomAnchor, constant: 0),
+      recommendedToYouLabel1.centerXAnchor.constraint(equalTo: nickNameLabelOne.centerXAnchor),
       recommendedToYouLabel1.widthAnchor.constraint(equalToConstant: 180),
       recommendedToYouLabel1.heightAnchor.constraint(equalToConstant: 20)
     ])
   }
   
-  private func setupSubscribeButton1Constraint() {
+  private func setupSubscribeButtonOneConstraint() {
     NSLayoutConstraint.activate([
-      subscribeButton1.topAnchor.constraint(equalTo: recommendedToYouLabel1.bottomAnchor, constant: 15),
-      subscribeButton1.centerXAnchor.constraint(equalTo: nickNameLabel1.centerXAnchor),
-      subscribeButton1.widthAnchor.constraint(equalToConstant: 210),
-      subscribeButton1.heightAnchor.constraint(equalToConstant: 30)
+      subscribeButtonOne.topAnchor.constraint(equalTo: recommendedToYouLabel1.bottomAnchor, constant: 15),
+      subscribeButtonOne.centerXAnchor.constraint(equalTo: nickNameLabelOne.centerXAnchor),
+      subscribeButtonOne.widthAnchor.constraint(equalToConstant: 210),
+      subscribeButtonOne.heightAnchor.constraint(equalToConstant: 30)
     ])
   }
   
-  private func setupRecommendView2Constraint() {
+  private func setupRecommendViewTwoConstraint() {
     NSLayoutConstraint.activate([
-      recommendView2.heightAnchor.constraint(equalToConstant: 320),
-      recommendView2.widthAnchor.constraint(equalToConstant: 240)
+      recommendViewTwo.heightAnchor.constraint(equalToConstant: 320),
+      recommendViewTwo.widthAnchor.constraint(equalToConstant: 240)
     ])
   }
   
-  private func setupPhoto2Constraint() {
+  private func setupPhotoTwoConstraint() {
     NSLayoutConstraint.activate([
-      photo2.topAnchor.constraint(equalTo: recommendView2.topAnchor, constant: 20),
-      photo2.centerXAnchor.constraint(equalTo: recommendView2.centerXAnchor),
-      photo2.widthAnchor.constraint(equalToConstant: 190),
-      photo2.heightAnchor.constraint(equalToConstant: 190)
+      photoTwo.topAnchor.constraint(equalTo: recommendViewTwo.topAnchor, constant: 20),
+      photoTwo.centerXAnchor.constraint(equalTo: recommendViewTwo.centerXAnchor),
+      photoTwo.widthAnchor.constraint(equalToConstant: 190),
+      photoTwo.heightAnchor.constraint(equalToConstant: 190)
     ])
   }
   
-  private func setupNickNameLabel2Constraint() {
+  private func setupNickNameLabelTwoConstraint() {
     NSLayoutConstraint.activate([
-      nickNameLabel2.topAnchor.constraint(equalTo: photo2.bottomAnchor, constant: 10),
-      nickNameLabel2.centerXAnchor.constraint(equalTo: recommendView2.centerXAnchor),
-      nickNameLabel2.widthAnchor.constraint(equalToConstant: 100),
-      nickNameLabel2.heightAnchor.constraint(equalToConstant: 20)
+      nickNameLabelTwo.topAnchor.constraint(equalTo: photoTwo.bottomAnchor, constant: 10),
+      nickNameLabelTwo.centerXAnchor.constraint(equalTo: recommendViewTwo.centerXAnchor),
+      nickNameLabelTwo.widthAnchor.constraint(equalToConstant: 100),
+      nickNameLabelTwo.heightAnchor.constraint(equalToConstant: 20)
     ])
   }
   
-  private func setupRecommendedToYouLabel2Constraint() {
+  private func setupRecommendedToYouLabelTwoConstraint() {
     NSLayoutConstraint.activate([
-      recommendedToYouLabel2.topAnchor.constraint(equalTo: nickNameLabel2.bottomAnchor, constant: 0),
-      recommendedToYouLabel2.centerXAnchor.constraint(equalTo: nickNameLabel2.centerXAnchor),
-      recommendedToYouLabel2.widthAnchor.constraint(equalToConstant: 180),
-      recommendedToYouLabel2.heightAnchor.constraint(equalToConstant: 20)
+      recommendedToYouLabelTwo.topAnchor.constraint(equalTo: nickNameLabelTwo.bottomAnchor, constant: 0),
+      recommendedToYouLabelTwo.centerXAnchor.constraint(equalTo: nickNameLabelTwo.centerXAnchor),
+      recommendedToYouLabelTwo.widthAnchor.constraint(equalToConstant: 180),
+      recommendedToYouLabelTwo.heightAnchor.constraint(equalToConstant: 20)
     ])
   }
   
-  private func setupSubscribeButton2Constraint() {
+  private func setupSubscribeButtonTwoConstraint() {
     NSLayoutConstraint.activate([
-      subscribeButton2.topAnchor.constraint(equalTo: recommendedToYouLabel2.bottomAnchor, constant: 15),
-      subscribeButton2.centerXAnchor.constraint(equalTo: nickNameLabel2.centerXAnchor),
-      subscribeButton2.widthAnchor.constraint(equalToConstant: 210),
-      subscribeButton2.heightAnchor.constraint(equalToConstant: 30)
+      subscribeButtonTwo.topAnchor.constraint(equalTo: recommendedToYouLabelTwo.bottomAnchor, constant: 15),
+      subscribeButtonTwo.centerXAnchor.constraint(equalTo: nickNameLabelTwo.centerXAnchor),
+      subscribeButtonTwo.widthAnchor.constraint(equalToConstant: 210),
+      subscribeButtonTwo.heightAnchor.constraint(equalToConstant: 30)
     ])
   }
   
-  private func setupRecommendView3Constraint() {
+  private func setupRecommendViewThreeConstraint() {
     NSLayoutConstraint.activate([
-      recommendView3.heightAnchor.constraint(equalToConstant: 320),
-      recommendView3.widthAnchor.constraint(equalToConstant: 240),
+      recommendViewThree.heightAnchor.constraint(equalToConstant: 320),
+      recommendViewThree.widthAnchor.constraint(equalToConstant: 240),
     ])
   }
   
-  private func setupPhoto3Constraint() {
+  private func setupPhotoThreeConstraint() {
     NSLayoutConstraint.activate([
-      photo3.topAnchor.constraint(equalTo: recommendView3.topAnchor, constant: 20),
-      photo3.centerXAnchor.constraint(equalTo: recommendView3.centerXAnchor),
-      photo3.widthAnchor.constraint(equalToConstant: 190),
-      photo3.heightAnchor.constraint(equalToConstant: 190)
+      photoThree.topAnchor.constraint(equalTo: recommendViewThree.topAnchor, constant: 20),
+      photoThree.centerXAnchor.constraint(equalTo: recommendViewThree.centerXAnchor),
+      photoThree.widthAnchor.constraint(equalToConstant: 190),
+      photoThree.heightAnchor.constraint(equalToConstant: 190)
     ])
   }
   
-  private func setupNickNameLabel3Constraint() {
+  private func setupNickNameLabelThreeConstraint() {
     NSLayoutConstraint.activate([
-      nickNameLabel3.topAnchor.constraint(equalTo: photo3.bottomAnchor, constant: 10),
-      nickNameLabel3.centerXAnchor.constraint(equalTo: recommendView3.centerXAnchor),
-      nickNameLabel3.widthAnchor.constraint(equalToConstant: 100),
-      nickNameLabel3.heightAnchor.constraint(equalToConstant: 20)
+      nickNameLabelThree.topAnchor.constraint(equalTo: photoThree.bottomAnchor, constant: 10),
+      nickNameLabelThree.centerXAnchor.constraint(equalTo: recommendViewThree.centerXAnchor),
+      nickNameLabelThree.widthAnchor.constraint(equalToConstant: 100),
+      nickNameLabelThree.heightAnchor.constraint(equalToConstant: 20)
     ])
   }
   
-  private func setupRecommendedToYouLabel3Constraint() {
+  private func setupRecommendedToYouLabelThreeConstraint() {
     NSLayoutConstraint.activate([
-      recommendedToYouLabel3.topAnchor.constraint(equalTo: nickNameLabel3.bottomAnchor, constant: 0),
-      recommendedToYouLabel3.centerXAnchor.constraint(equalTo: nickNameLabel3.centerXAnchor),
-      recommendedToYouLabel3.widthAnchor.constraint(equalToConstant: 180),
-      recommendedToYouLabel3.heightAnchor.constraint(equalToConstant: 20)
+      recommendedToYouLabelThree.topAnchor.constraint(equalTo: nickNameLabelThree.bottomAnchor, constant: 0),
+      recommendedToYouLabelThree.centerXAnchor.constraint(equalTo: nickNameLabelThree.centerXAnchor),
+      recommendedToYouLabelThree.widthAnchor.constraint(equalToConstant: 180),
+      recommendedToYouLabelThree.heightAnchor.constraint(equalToConstant: 20)
     ])
   }
   
-  private func setupSubscribeButton3Constraint() {
+  private func setupSubscribeButtonThreeConstraint() {
     NSLayoutConstraint.activate([
-      subscribeButton3.topAnchor.constraint(equalTo: recommendedToYouLabel3.bottomAnchor, constant: 15),
-      subscribeButton3.centerXAnchor.constraint(equalTo: nickNameLabel3.centerXAnchor),
-      subscribeButton3.widthAnchor.constraint(equalToConstant: 210),
-      subscribeButton3.heightAnchor.constraint(equalToConstant: 30)
+      subscribeButtonThree.topAnchor.constraint(equalTo: recommendedToYouLabelThree.bottomAnchor, constant: 15),
+      subscribeButtonThree.centerXAnchor.constraint(equalTo: nickNameLabelThree.centerXAnchor),
+      subscribeButtonThree.widthAnchor.constraint(equalToConstant: 210),
+      subscribeButtonThree.heightAnchor.constraint(equalToConstant: 30)
     ])
   }
   
@@ -395,20 +396,20 @@ class RecommendCell: UITableViewCell {
   }
   
   //MARK: - StackView
-  private func setupStackView1() {
-    [recommendView1, recommendView2, recommendView3].forEach {
-      stackView1.addArrangedSubview($0)
+  private func setupStackViewOne() {
+    [recommendViewOne, recommendViewTwo, recommendViewThree].forEach {
+      stackViewOne.addArrangedSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
-    stackView1.axis = .horizontal
-    stackView1.spacing = 30
-    stackView1.alignment = .center
+    stackViewOne.axis = .horizontal
+    stackViewOne.spacing = 30
+    stackViewOne.alignment = .center
   }
   
-  private func setupStackView1Constraints() {
+  private func setupStackViewOneConstraints() {
     NSLayoutConstraint.activate([
-      stackView1.leadingAnchor.constraint(equalTo: helpView.leadingAnchor, constant: 10),
-      stackView1.trailingAnchor.constraint(equalTo: helpView.trailingAnchor, constant: 0)
+      stackViewOne.leadingAnchor.constraint(equalTo: helpView.leadingAnchor, constant: 10),
+      stackViewOne.trailingAnchor.constraint(equalTo: helpView.trailingAnchor, constant: 0)
     ])
   }
 }

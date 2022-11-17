@@ -1,4 +1,3 @@
 import UIKit
 
-final class PersonalRecommendationsViewController: UIViewController {
-}
+final class PersonalRecommendationsViewController: UIViewController {}

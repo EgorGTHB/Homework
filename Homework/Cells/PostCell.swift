@@ -1,6 +1,6 @@
 import UIKit
 
-class PostCell: UITableViewCell {
+final class PostCell: UITableViewCell {
   // MARK: - Private Properties
   private let avatarImageView = UIImageView()
   private let nicknameLabel = UILabel()
@@ -13,17 +13,17 @@ class PostCell: UITableViewCell {
   private let commentatorNicknameLabel = UILabel()
   private let commentTextLabel = UILabel()
   private let seeCommentLabel = UILabel()
-  private let avatarImageView2 = UIImageView()
+  private let avatarImageViewTwo = UIImageView()
   private let addCommentLabel = UILabel()
   private let heartEmojiLabel = UILabel()
   private let handsEmojiLabel = UILabel()
   private let plusCircleButton = UIButton()
   private let timeOfPublicationOfPost = UILabel()
-  private let stackView1 = UIStackView()
-  private let stackView2 = UIStackView()
-  private let stackView3 = UIStackView()
-  private let stackView4 = UIStackView()
-  private let stackView5 = UIStackView()
+  private let stackViewOne = UIStackView()
+  private let stackViewTwo = UIStackView()
+  private let stackViewThree = UIStackView()
+  private let stackViewFour = UIStackView()
+  private let stackViewFive = UIStackView()
   
   // MARK: - UITableViewCell
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -31,6 +31,7 @@ class PostCell: UITableViewCell {
     setupCell()
   }
   
+  @available(*, unavailable)
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -105,9 +106,9 @@ class PostCell: UITableViewCell {
   }
   
   private func setupAvatarImageView2() {
-    avatarImageView2.image = UIImage(named: "avatar")
-    avatarImageView2.layer.cornerRadius = 20
-    avatarImageView2.clipsToBounds = true
+    avatarImageViewTwo.image = UIImage(named: "avatar")
+    avatarImageViewTwo.layer.cornerRadius = 20
+    avatarImageViewTwo.clipsToBounds = true
   }
   
   private func setupAddCommentLabel() {
@@ -163,26 +164,26 @@ class PostCell: UITableViewCell {
     setupAvatarConstraints()
     setupNicknameLabelConstraints()
     setupEllipsisButtonConstraints()
-    setupStackView1()
-    setupStackView1Constraints()
+    setupStackViewOne()
+    setupStackViewOneConstraints()
     setupPhotoOfPostImageViewConstraints()
     setupLikeButtonConstraints()
     setupCommentsButtonConstraints()
     setupPaperplaneButtonConstraints()
-    setupStackView2()
+    setupStackViewTwo()
     setupCommentatorNicknameLabelConstraints()
     setupCommentTextLabelConstraints()
-    setupStackView3()
+    setupStackViewThree()
     setupSeeCommentLabelConstraint()
-    setupAvatarImageView2Constraint()
+    setupAvatarImageViewTwoConstraint()
     setupAddCommentLabelConstraint()
     setupHeartEmojiLabelConstraint()
     setupHandsEmojiLabelConstraint()
     setupPlusCircleButtonConstraint()
-    setupStackView4()
+    setupStackViewFour()
     setupTimeOfPublicationOfPostConstraint()
-    setupStackView5()
-    setupStackView5Constraint()
+    setupStackViewFive()
+    setupStackViewFiveConstraint()
   }
   
   private func setupAppearance() {
@@ -191,7 +192,7 @@ class PostCell: UITableViewCell {
   }
   
   private func addSubviews() {
-    [avatarImageView, nicknameLabel, stackView1, ellipsisButton, photoOfPostImageView, likeButton, commentsButton, paperplaneButton, stackView2, likeCountLabel, commentatorNicknameLabel, commentTextLabel, stackView3, seeCommentLabel, avatarImageView2, addCommentLabel, heartEmojiLabel, handsEmojiLabel, plusCircleButton, timeOfPublicationOfPost, stackView5].forEach {
+    [avatarImageView, nicknameLabel, stackViewOne, ellipsisButton, photoOfPostImageView, likeButton, commentsButton, paperplaneButton, stackViewTwo, likeCountLabel, commentatorNicknameLabel, commentTextLabel, stackViewThree, seeCommentLabel, avatarImageViewTwo, addCommentLabel, heartEmojiLabel, handsEmojiLabel, plusCircleButton, timeOfPublicationOfPost, stackViewFive].forEach {
       contentView.addSubview($0)
       $0.translatesAutoresizingMaskIntoConstraints = false
     }
@@ -221,18 +222,18 @@ class PostCell: UITableViewCell {
     ])
   }
   
-  private func setupStackView1() {
-    stackView1.addArrangedSubview(avatarImageView)
-    stackView1.addArrangedSubview(nicknameLabel)
-    stackView1.axis = .horizontal
-    stackView1.spacing = 5
-    stackView1.alignment = .center
+  private func setupStackViewOne() {
+    stackViewOne.addArrangedSubview(avatarImageView)
+    stackViewOne.addArrangedSubview(nicknameLabel)
+    stackViewOne.axis = .horizontal
+    stackViewOne.spacing = 5
+    stackViewOne.alignment = .center
   }
   
-  private func setupStackView1Constraints() {
+  private func setupStackViewOneConstraints() {
     NSLayoutConstraint.activate([
-      stackView1.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-      stackView1.topAnchor.constraint(equalTo: topAnchor, constant: 10)
+      stackViewOne.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+      stackViewOne.topAnchor.constraint(equalTo: topAnchor, constant: 10)
     ])
   }
   
@@ -240,7 +241,7 @@ class PostCell: UITableViewCell {
     NSLayoutConstraint.activate([
       photoOfPostImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
       photoOfPostImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
-      photoOfPostImageView.topAnchor.constraint(equalTo: stackView1.bottomAnchor, constant: 10),
+      photoOfPostImageView.topAnchor.constraint(equalTo: stackViewOne.bottomAnchor, constant: 10),
       photoOfPostImageView.heightAnchor.constraint(equalToConstant: 300)
     ])
   }
@@ -266,13 +267,13 @@ class PostCell: UITableViewCell {
     ])
   }
   
-  private func setupStackView2() {
-    stackView2.addArrangedSubview(likeButton)
-    stackView2.addArrangedSubview(commentsButton)
-    stackView2.addArrangedSubview(paperplaneButton)
-    stackView2.axis = .horizontal
-    stackView2.spacing = 10
-    stackView2.alignment = .center
+  private func setupStackViewTwo() {
+    stackViewTwo.addArrangedSubview(likeButton)
+    stackViewTwo.addArrangedSubview(commentsButton)
+    stackViewTwo.addArrangedSubview(paperplaneButton)
+    stackViewTwo.axis = .horizontal
+    stackViewTwo.spacing = 10
+    stackViewTwo.alignment = .center
   }
   
   private func setupCommentatorNicknameLabelConstraints() {
@@ -289,12 +290,12 @@ class PostCell: UITableViewCell {
     ])
   }
   
-  private func setupStackView3() {
-    stackView3.addArrangedSubview(commentatorNicknameLabel)
-    stackView3.addArrangedSubview(commentTextLabel)
-    stackView3.axis = .horizontal
-    stackView3.spacing = 4
-    stackView3.alignment = .center
+  private func setupStackViewThree() {
+    stackViewThree.addArrangedSubview(commentatorNicknameLabel)
+    stackViewThree.addArrangedSubview(commentTextLabel)
+    stackViewThree.axis = .horizontal
+    stackViewThree.spacing = 4
+    stackViewThree.alignment = .center
   }
   
   private func setupSeeCommentLabelConstraint() {
@@ -304,10 +305,10 @@ class PostCell: UITableViewCell {
     ])
   }
   
-  private func setupAvatarImageView2Constraint() {
+  private func setupAvatarImageViewTwoConstraint() {
     NSLayoutConstraint.activate([
-      avatarImageView2.heightAnchor.constraint(equalToConstant: 40),
-      avatarImageView2.widthAnchor.constraint(equalToConstant: 40)
+      avatarImageViewTwo.heightAnchor.constraint(equalToConstant: 40),
+      avatarImageViewTwo.widthAnchor.constraint(equalToConstant: 40)
     ])
   }
   
@@ -339,18 +340,18 @@ class PostCell: UITableViewCell {
     ])
   }
   
-  private func setupStackView4() {
-    stackView4.addArrangedSubview(avatarImageView2)
-    stackView4.setCustomSpacing(15, after: avatarImageView2)
-    stackView4.addArrangedSubview(addCommentLabel)
-    stackView4.addArrangedSubview(heartEmojiLabel)
-    stackView4.setCustomSpacing(15, after: heartEmojiLabel)
-    stackView4.addArrangedSubview(handsEmojiLabel)
-    stackView4.setCustomSpacing(15, after: handsEmojiLabel)
-    stackView4.addArrangedSubview(plusCircleButton)
-    stackView4.axis = .horizontal
-    stackView4.spacing = 4
-    stackView4.alignment = .center
+  private func setupStackViewFour() {
+    stackViewFour.addArrangedSubview(avatarImageViewTwo)
+    stackViewFour.setCustomSpacing(15, after: avatarImageViewTwo)
+    stackViewFour.addArrangedSubview(addCommentLabel)
+    stackViewFour.addArrangedSubview(heartEmojiLabel)
+    stackViewFour.setCustomSpacing(15, after: heartEmojiLabel)
+    stackViewFour.addArrangedSubview(handsEmojiLabel)
+    stackViewFour.setCustomSpacing(15, after: handsEmojiLabel)
+    stackViewFour.addArrangedSubview(plusCircleButton)
+    stackViewFour.axis = .horizontal
+    stackViewFour.spacing = 4
+    stackViewFour.alignment = .center
   }
   
   private func setupTimeOfPublicationOfPostConstraint() {
@@ -360,26 +361,26 @@ class PostCell: UITableViewCell {
     ])
   }
   
-  private func setupStackView5() {
-    stackView5.addArrangedSubview(stackView2)
-    stackView5.addArrangedSubview(likeCountLabel)
-    stackView5.addArrangedSubview(stackView3)
-    stackView5.addArrangedSubview(seeCommentLabel)
-    stackView5.setCustomSpacing(13, after: seeCommentLabel)
-    stackView5.addArrangedSubview(stackView4)
-    stackView5.setCustomSpacing(13, after: stackView4)
-    stackView5.addArrangedSubview(timeOfPublicationOfPost)
-    stackView5.axis = .vertical
-    stackView5.spacing = 5
-    stackView5.alignment = .leading
-    stackView5.setCustomSpacing(220, after: nicknameLabel)
+  private func setupStackViewFive() {
+    stackViewFive.addArrangedSubview(stackViewTwo)
+    stackViewFive.addArrangedSubview(likeCountLabel)
+    stackViewFive.addArrangedSubview(stackViewThree)
+    stackViewFive.addArrangedSubview(seeCommentLabel)
+    stackViewFive.setCustomSpacing(13, after: seeCommentLabel)
+    stackViewFive.addArrangedSubview(stackViewFour)
+    stackViewFive.setCustomSpacing(13, after: stackViewFour)
+    stackViewFive.addArrangedSubview(timeOfPublicationOfPost)
+    stackViewFive.axis = .vertical
+    stackViewFive.spacing = 5
+    stackViewFive.alignment = .leading
+    stackViewFive.setCustomSpacing(220, after: nicknameLabel)
   }
   
-  private func setupStackView5Constraint() {
+  private func setupStackViewFiveConstraint() {
     NSLayoutConstraint.activate([
-      stackView5.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-      stackView5.topAnchor.constraint(equalTo: photoOfPostImageView.bottomAnchor, constant: 10),
-      stackView5.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
+      stackViewFive.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+      stackViewFive.topAnchor.constraint(equalTo: photoOfPostImageView.bottomAnchor, constant: 10),
+      stackViewFive.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
     ])
   }
 }
