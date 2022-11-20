@@ -1,6 +1,5 @@
 import UIKit
-
-
+ 
 final class PhotoTapeCell: UITableViewCell {
   // MARK: - Private Properties
   private let photoScrollView = UIScrollView()

@@ -49,7 +49,6 @@ final class HomeViewController: UIViewController {
   }
   
   func setupTableView() {
-    //зарегать три ячейки
     postsTableView.refreshControl = refreshControl
     postsTableView.delegate = self
     postsTableView.dataSource = self
@@ -75,7 +74,6 @@ final class HomeViewController: UIViewController {
     sender.endRefreshing()
   }
 }
-
  
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
