@@ -41,7 +41,7 @@ final class PostCell: UITableViewCell {
     avatarImageView.image = UIImage(named: "avatar")
     avatarImageView.layer.cornerRadius = 20
     avatarImageView.clipsToBounds = true
-  }
+   }
   
   private func setupNicknameLabel() {
     nicknameLabel.text = "daniil"
