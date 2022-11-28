@@ -4,7 +4,7 @@ final class HomeViewController: UIViewController {
   // MARK: - Private Properties
   private let postsTableView = UITableView()
   private let refreshControl = UIRefreshControl()
- 
+  
   // MARK: - UIViewController
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,7 +20,7 @@ final class HomeViewController: UIViewController {
     navigationController?.navigationBar.standardAppearance = appearance
     navigationItem.title = "Instagram"
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "message"), style: .plain, target: self, action: nil)
-   }
+  }
   
   private func setupRefreshControl() {
     refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -36,14 +36,14 @@ final class HomeViewController: UIViewController {
     setupTableView()
     setupPostsTableViewConstraint()
   }
-
+  
   private func addSubviews() {
-      [postsTableView].forEach {
-        view.addSubview($0)
-        $0.translatesAutoresizingMaskIntoConstraints = false
-      }
+    [postsTableView].forEach {
+      view.addSubview($0)
+      $0.translatesAutoresizingMaskIntoConstraints = false
+    }
   }
- 
+  
   private func setupSelfView() {
     view.backgroundColor = .black
   }
@@ -68,13 +68,13 @@ final class HomeViewController: UIViewController {
       postsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
     ])
   }
-
+  
   // MARK: - Actions
   @objc private func refresh(sender: UIRefreshControl) {
     sender.endRefreshing()
   }
 }
- 
+
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource {
   
@@ -87,7 +87,6 @@ extension HomeViewController: UITableViewDataSource {
     if indexPath.row == 0 {
       cell = tableView.dequeueReusableCell(withIdentifier: "PhotoTapeCell") as! PhotoTapeCell
       cell.contentView.isUserInteractionEnabled = true
-
     } else if indexPath.row == 2 {
       cell = tableView.dequeueReusableCell(withIdentifier: "RecommendCell") as! RecommendCell
       cell.contentView.isUserInteractionEnabled = true

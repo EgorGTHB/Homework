@@ -1,11 +1,11 @@
 import Foundation
 
 struct LikeYourContentModel {
-  var imageSomeone: String
-  var atrOne: String
-  var atrTwo: String
-  var atrThree: String
-  var atrFour: String
-  var atrFive: String
-  var imageOwn: String
+  let imageSomeone: String
+  let atrOne: String
+  let atrTwo: String
+  let atrThree: String
+  let atrFour: String
+  let atrFive: String
+  let imageOwn: String
 }

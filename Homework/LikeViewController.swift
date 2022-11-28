@@ -1,6 +1,6 @@
 import UIKit
 
-class LikeViewController: UITableViewController {
+final class LikeViewController: UITableViewController {
   //MARK: - Private Properties
   private let refreshController = UIRefreshControl()
  
