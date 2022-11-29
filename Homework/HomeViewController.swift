@@ -85,12 +85,13 @@ extension HomeViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: UITableViewCell
     if indexPath.row == 0 {
-      cell = tableView.dequeueReusableCell(withIdentifier: "PhotoTapeCell") as! PhotoTapeCell
-      cell.contentView.isUserInteractionEnabled = true
-
+      guard let photoTapeCell = tableView.dequeueReusableCell(withIdentifier: "PhotoTapeCell") as? PhotoTapeCell else { return UITableViewCell() }
+      photoTapeCell.contentView.isUserInteractionEnabled = true
+      cell = photoTapeCell
     } else if indexPath.row == 2 {
-      cell = tableView.dequeueReusableCell(withIdentifier: "RecommendCell") as! RecommendCell
-      cell.contentView.isUserInteractionEnabled = true
+      guard let recommendCell = tableView.dequeueReusableCell(withIdentifier: "RecommendCell") as? RecommendCell else { return UITableViewCell() }
+      recommendCell.contentView.isUserInteractionEnabled = true
+      cell = recommendCell
     }
     else {
       cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell

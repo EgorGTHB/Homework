@@ -76,17 +76,17 @@ class LikeViewController: UITableViewController {
     var cell = UITableViewCell()
     switch indexPath.section {
     case 0:
-      let subscriptionRequestsCell = tableView.dequeueReusableCell(withIdentifier: "SubscriptionRequestsCell", for: indexPath) as! SubscriptionRequestsCell
+      guard let subscriptionRequestsCell = tableView.dequeueReusableCell(withIdentifier: "SubscriptionRequestsCell", for: indexPath) as? SubscriptionRequestsCell else { return UITableViewCell() }
       cell = subscriptionRequestsCell
     case 1:
       switch indexPath.row {
       case 0:
-        let likeYourContentCell = tableView.dequeueReusableCell(withIdentifier: "LikeYourContentCell", for: indexPath) as! LikeYourContentCell
+        guard let likeYourContentCell = tableView.dequeueReusableCell(withIdentifier: "LikeYourContentCell", for: indexPath) as? LikeYourContentCell else { return UITableViewCell() }
         let model = LikeYourContentModel(imageSomeone: "vtumxi", atrOne: "vtumxi ", atrTwo: "упомянул(-а) вас в комментарии: ", atrThree: "@evgeny_zveric ", atrFour: "спасибо) ", atrFive: "12 ч.", imageOwn: "two")
         likeYourContentCell.configureCell(model: model)
         cell = likeYourContentCell
       case 1:
-        let likeYourContentCell = tableView.dequeueReusableCell(withIdentifier: "LikeYourContentCell", for: indexPath) as! LikeYourContentCell
+       guard let likeYourContentCell = tableView.dequeueReusableCell(withIdentifier: "LikeYourContentCell", for: indexPath) as? LikeYourContentCell else { return UITableViewCell() }
         let model = LikeYourContentModel(imageSomeone: "vtumxi", atrOne: "vtumxi ", atrTwo: "понравился ваш комментарий: ух ты фотошопер какой", atrThree: " ", atrFour: "", atrFive: "12 ч.", imageOwn: "two")
         likeYourContentCell.configureCell(model: model)
         cell = likeYourContentCell
@@ -95,32 +95,32 @@ class LikeViewController: UITableViewController {
     case 2:
       switch indexPath.row {
       case 0:
-        let likeYourContentCell = tableView.dequeueReusableCell(withIdentifier: "LikeYourContentCell", for: indexPath) as! LikeYourContentCell
+        guard let likeYourContentCell = tableView.dequeueReusableCell(withIdentifier: "LikeYourContentCell", for: indexPath) as? LikeYourContentCell else { return UITableViewCell() }
         let model = LikeYourContentModel(imageSomeone: "three", atrOne: "tima5955 ", atrTwo: "понравился ваш комментарий: красивые кадры", atrThree: " ", atrFour: "", atrFive: "2 д.", imageOwn: "four")
         likeYourContentCell.configureCell(model: model)
         cell = likeYourContentCell
       case 1:
-        let contentWithButtonCell = tableView.dequeueReusableCell(withIdentifier: "ContentWithButtonCell", for: indexPath) as! ContentWithButtonCell
+       guard let contentWithButtonCell = tableView.dequeueReusableCell(withIdentifier: "ContentWithButtonCell", for: indexPath) as? ContentWithButtonCell else { return UITableViewCell() }
         let model = ContentWithButtonModel(imageSomeone: "eight", atrOne: "zenkova2021 ", atrTwo: "Есть в Instagram. Вы можете знать этого человека.", atrThree: " ", atrFour: "", atrFive: "3 д.", optionButton: true)
         contentWithButtonCell.configureCell(model: model)
         cell = contentWithButtonCell
       case 2:
-        let likeYourContentCell = tableView.dequeueReusableCell(withIdentifier: "LikeYourContentCell", for: indexPath) as! LikeYourContentCell
+        guard let likeYourContentCell = tableView.dequeueReusableCell(withIdentifier: "LikeYourContentCell", for: indexPath) as? LikeYourContentCell else { return UITableViewCell() }
         let model = LikeYourContentModel(imageSomeone: "five", atrOne: "baskatov_ ", atrTwo: "нравится ваше видео.", atrThree: " ", atrFour: "", atrFive: "3 д.", imageOwn: "six")
         likeYourContentCell.configureCell(model: model)
         cell = likeYourContentCell
       case 3:
-        let contentWithButtonCell = tableView.dequeueReusableCell(withIdentifier: "ContentWithButtonCell", for: indexPath) as! ContentWithButtonCell
+        guard let contentWithButtonCell = tableView.dequeueReusableCell(withIdentifier: "ContentWithButtonCell", for: indexPath) as? ContentWithButtonCell else { return UITableViewCell() }
         let model = ContentWithButtonModel(imageSomeone: "seven", atrOne: "axper ", atrTwo: "подписался(-ась) на ваши обновления.", atrThree: " ", atrFour: "", atrFive: "3 д.", optionButton: false)
         contentWithButtonCell.configureCell(model: model)
         cell = contentWithButtonCell
       case 4:
-        let contentWithButtonCell = tableView.dequeueReusableCell(withIdentifier: "ContentWithButtonCell", for: indexPath) as! ContentWithButtonCell
+        guard let contentWithButtonCell = tableView.dequeueReusableCell(withIdentifier: "ContentWithButtonCell", for: indexPath) as? ContentWithButtonCell else { return UITableViewCell() }
         let model = ContentWithButtonModel(imageSomeone: "five", atrOne: "baskatov_ ", atrTwo: "подписался(-ась) на ваши обновления.", atrThree: " ", atrFour: "", atrFive: "3 д.", optionButton: false)
         contentWithButtonCell.configureCell(model: model)
         cell = contentWithButtonCell
       case 5:
-        let contentWithButtonCell = tableView.dequeueReusableCell(withIdentifier: "ContentWithButtonCell", for: indexPath) as! ContentWithButtonCell
+        guard let contentWithButtonCell = tableView.dequeueReusableCell(withIdentifier: "ContentWithButtonCell", for: indexPath) as? ContentWithButtonCell else { return UITableViewCell() }
         let model = ContentWithButtonModel(imageSomeone: "nine", atrOne: "goncharov ", atrTwo: "подписался(-ась) на ваши обновления.", atrThree: " ", atrFour: "", atrFive: "5 д.", optionButton: true)
         contentWithButtonCell.configureCell(model: model)
         cell = contentWithButtonCell
